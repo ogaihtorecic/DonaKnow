@@ -28,6 +28,9 @@
 		AFF879E217E138CC001C0BE7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFF879B217E138CC001C0BE7 /* Foundation.framework */; };
 		AFF879EA17E138CC001C0BE7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AFF879E817E138CC001C0BE7 /* InfoPlist.strings */; };
 		AFF879ED17E138CC001C0BE7 /* DonaKnowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF879EC17E138CC001C0BE7 /* DonaKnowTests.m */; };
+		AFF879F817E139A1001C0BE7 /* 88-beer-mug.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF879F617E139A1001C0BE7 /* 88-beer-mug.png */; };
+		AFF879F917E139A1001C0BE7 /* 172-pricetag.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF879F717E139A1001C0BE7 /* 172-pricetag.png */; };
+		AFF879FB17E139D8001C0BE7 /* 28-star.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF879FA17E139D8001C0BE7 /* 28-star.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,9 @@
 		AFF879E917E138CC001C0BE7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AFF879EB17E138CC001C0BE7 /* DonaKnowTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DonaKnowTests.h; sourceTree = "<group>"; };
 		AFF879EC17E138CC001C0BE7 /* DonaKnowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DonaKnowTests.m; sourceTree = "<group>"; };
+		AFF879F617E139A1001C0BE7 /* 88-beer-mug.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "88-beer-mug.png"; sourceTree = "<group>"; };
+		AFF879F717E139A1001C0BE7 /* 172-pricetag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "172-pricetag.png"; sourceTree = "<group>"; };
+		AFF879FA17E139D8001C0BE7 /* 28-star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "28-star.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +153,9 @@
 		AFF879B717E138CC001C0BE7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AFF879FA17E139D8001C0BE7 /* 28-star.png */,
+				AFF879F617E139A1001C0BE7 /* 88-beer-mug.png */,
+				AFF879F717E139A1001C0BE7 /* 172-pricetag.png */,
 				AFF879B817E138CC001C0BE7 /* DonaKnow-Info.plist */,
 				AFF879B917E138CC001C0BE7 /* InfoPlist.strings */,
 				AFF879BC17E138CC001C0BE7 /* main.m */,
@@ -258,6 +267,9 @@
 				AFF879D117E138CC001C0BE7 /* first@2x.png in Resources */,
 				AFF879D617E138CC001C0BE7 /* second.png in Resources */,
 				AFF879D817E138CC001C0BE7 /* second@2x.png in Resources */,
+				AFF879F817E139A1001C0BE7 /* 88-beer-mug.png in Resources */,
+				AFF879F917E139A1001C0BE7 /* 172-pricetag.png in Resources */,
+				AFF879FB17E139D8001C0BE7 /* 28-star.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
