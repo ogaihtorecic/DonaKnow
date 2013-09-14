@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AFE954C617E41DD800D28E13 /* Evento.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE954C517E41DD800D28E13 /* Evento.m */; };
+		AFE954C917E41F6B00D28E13 /* EventoDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE954C817E41F6B00D28E13 /* EventoDataController.m */; };
+		AFE954CC17E421FC00D28E13 /* EventosMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE954CB17E421FC00D28E13 /* EventosMasterViewController.m */; };
+		AFE954CF17E4241000D28E13 /* EventoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE954CE17E4241000D28E13 /* EventoDetailViewController.m */; };
 		AFF879B117E138CC001C0BE7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFF879B017E138CC001C0BE7 /* UIKit.framework */; };
 		AFF879B317E138CC001C0BE7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFF879B217E138CC001C0BE7 /* Foundation.framework */; };
 		AFF879B517E138CC001C0BE7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFF879B417E138CC001C0BE7 /* CoreGraphics.framework */; };
@@ -17,12 +21,6 @@
 		AFF879C517E138CC001C0BE7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF879C417E138CC001C0BE7 /* Default@2x.png */; };
 		AFF879C717E138CC001C0BE7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF879C617E138CC001C0BE7 /* Default-568h@2x.png */; };
 		AFF879CA17E138CC001C0BE7 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFF879C817E138CC001C0BE7 /* MainStoryboard.storyboard */; };
-		AFF879CD17E138CC001C0BE7 /* DonaKnowFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF879CC17E138CC001C0BE7 /* DonaKnowFirstViewController.m */; };
-		AFF879CF17E138CC001C0BE7 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF879CE17E138CC001C0BE7 /* first.png */; };
-		AFF879D117E138CC001C0BE7 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF879D017E138CC001C0BE7 /* first@2x.png */; };
-		AFF879D417E138CC001C0BE7 /* DonaKnowSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF879D317E138CC001C0BE7 /* DonaKnowSecondViewController.m */; };
-		AFF879D617E138CC001C0BE7 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF879D517E138CC001C0BE7 /* second.png */; };
-		AFF879D817E138CC001C0BE7 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF879D717E138CC001C0BE7 /* second@2x.png */; };
 		AFF879E017E138CC001C0BE7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFF879DF17E138CC001C0BE7 /* SenTestingKit.framework */; };
 		AFF879E117E138CC001C0BE7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFF879B017E138CC001C0BE7 /* UIKit.framework */; };
 		AFF879E217E138CC001C0BE7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFF879B217E138CC001C0BE7 /* Foundation.framework */; };
@@ -44,6 +42,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AFE954C417E41DD800D28E13 /* Evento.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Evento.h; sourceTree = "<group>"; };
+		AFE954C517E41DD800D28E13 /* Evento.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Evento.m; sourceTree = "<group>"; };
+		AFE954C717E41F6B00D28E13 /* EventoDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventoDataController.h; sourceTree = "<group>"; };
+		AFE954C817E41F6B00D28E13 /* EventoDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventoDataController.m; sourceTree = "<group>"; };
+		AFE954CA17E421FC00D28E13 /* EventosMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventosMasterViewController.h; sourceTree = "<group>"; };
+		AFE954CB17E421FC00D28E13 /* EventosMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventosMasterViewController.m; sourceTree = "<group>"; };
+		AFE954CD17E4241000D28E13 /* EventoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventoDetailViewController.h; sourceTree = "<group>"; };
+		AFE954CE17E4241000D28E13 /* EventoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventoDetailViewController.m; sourceTree = "<group>"; };
 		AFF879AD17E138CC001C0BE7 /* DonaKnow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DonaKnow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFF879B017E138CC001C0BE7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AFF879B217E138CC001C0BE7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -58,14 +64,6 @@
 		AFF879C417E138CC001C0BE7 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		AFF879C617E138CC001C0BE7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		AFF879C917E138CC001C0BE7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		AFF879CB17E138CC001C0BE7 /* DonaKnowFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DonaKnowFirstViewController.h; sourceTree = "<group>"; };
-		AFF879CC17E138CC001C0BE7 /* DonaKnowFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DonaKnowFirstViewController.m; sourceTree = "<group>"; };
-		AFF879CE17E138CC001C0BE7 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
-		AFF879D017E138CC001C0BE7 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		AFF879D217E138CC001C0BE7 /* DonaKnowSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DonaKnowSecondViewController.h; sourceTree = "<group>"; };
-		AFF879D317E138CC001C0BE7 /* DonaKnowSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DonaKnowSecondViewController.m; sourceTree = "<group>"; };
-		AFF879D517E138CC001C0BE7 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
-		AFF879D717E138CC001C0BE7 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		AFF879DE17E138CC001C0BE7 /* DonaKnowTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DonaKnowTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFF879DF17E138CC001C0BE7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		AFF879E717E138CC001C0BE7 /* DonaKnowTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DonaKnowTests-Info.plist"; sourceTree = "<group>"; };
@@ -137,14 +135,14 @@
 				AFF879BF17E138CC001C0BE7 /* DonaKnowAppDelegate.h */,
 				AFF879C017E138CC001C0BE7 /* DonaKnowAppDelegate.m */,
 				AFF879C817E138CC001C0BE7 /* MainStoryboard.storyboard */,
-				AFF879CB17E138CC001C0BE7 /* DonaKnowFirstViewController.h */,
-				AFF879CC17E138CC001C0BE7 /* DonaKnowFirstViewController.m */,
-				AFF879CE17E138CC001C0BE7 /* first.png */,
-				AFF879D017E138CC001C0BE7 /* first@2x.png */,
-				AFF879D217E138CC001C0BE7 /* DonaKnowSecondViewController.h */,
-				AFF879D317E138CC001C0BE7 /* DonaKnowSecondViewController.m */,
-				AFF879D517E138CC001C0BE7 /* second.png */,
-				AFF879D717E138CC001C0BE7 /* second@2x.png */,
+				AFE954C417E41DD800D28E13 /* Evento.h */,
+				AFE954C517E41DD800D28E13 /* Evento.m */,
+				AFE954C717E41F6B00D28E13 /* EventoDataController.h */,
+				AFE954C817E41F6B00D28E13 /* EventoDataController.m */,
+				AFE954CA17E421FC00D28E13 /* EventosMasterViewController.h */,
+				AFE954CB17E421FC00D28E13 /* EventosMasterViewController.m */,
+				AFE954CD17E4241000D28E13 /* EventoDetailViewController.h */,
+				AFE954CE17E4241000D28E13 /* EventoDetailViewController.m */,
 				AFF879B717E138CC001C0BE7 /* Supporting Files */,
 			);
 			path = DonaKnow;
@@ -263,10 +261,6 @@
 				AFF879C517E138CC001C0BE7 /* Default@2x.png in Resources */,
 				AFF879C717E138CC001C0BE7 /* Default-568h@2x.png in Resources */,
 				AFF879CA17E138CC001C0BE7 /* MainStoryboard.storyboard in Resources */,
-				AFF879CF17E138CC001C0BE7 /* first.png in Resources */,
-				AFF879D117E138CC001C0BE7 /* first@2x.png in Resources */,
-				AFF879D617E138CC001C0BE7 /* second.png in Resources */,
-				AFF879D817E138CC001C0BE7 /* second@2x.png in Resources */,
 				AFF879F817E139A1001C0BE7 /* 88-beer-mug.png in Resources */,
 				AFF879F917E139A1001C0BE7 /* 172-pricetag.png in Resources */,
 				AFF879FB17E139D8001C0BE7 /* 28-star.png in Resources */,
@@ -306,8 +300,10 @@
 			files = (
 				AFF879BD17E138CC001C0BE7 /* main.m in Sources */,
 				AFF879C117E138CC001C0BE7 /* DonaKnowAppDelegate.m in Sources */,
-				AFF879CD17E138CC001C0BE7 /* DonaKnowFirstViewController.m in Sources */,
-				AFF879D417E138CC001C0BE7 /* DonaKnowSecondViewController.m in Sources */,
+				AFE954C617E41DD800D28E13 /* Evento.m in Sources */,
+				AFE954C917E41F6B00D28E13 /* EventoDataController.m in Sources */,
+				AFE954CC17E421FC00D28E13 /* EventosMasterViewController.m in Sources */,
+				AFE954CF17E4241000D28E13 /* EventoDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +484,7 @@
 				AFF879F217E138CC001C0BE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AFF879F317E138CC001C0BE7 /* Build configuration list for PBXNativeTarget "DonaKnowTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +493,7 @@
 				AFF879F517E138CC001C0BE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
