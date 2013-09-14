@@ -10,17 +10,31 @@
 
 #import "Evento.h"
 @interface EventoDataController ()
+
 - (void)initializeDefaultDataList;
+
 @end
 
 @implementation EventoDataController
 
 - (void)initializeDefaultDataList {
     NSMutableArray *eventoList = [[NSMutableArray alloc] init];
+    
     self.masterEventoList = eventoList;
-    Evento *evento;
-    evento = [[Evento alloc] initWithNome:@"Acustico Joci Carvalho" local:@"Allegro Bar" endereco:@"Rua A" observacoes:@"Festa Legal"];
-    [self addEventoWithEvento:evento];
+    
+    NSString *url = [NSString stringWithFormat:@"http://dk.aondefui.com/?json=1&custom_fields=quanto,bandas,observacao,informacoes&taxonomy=local&taxonomy_fields=cidade,mapa_do_local"];
+    NSData *jsonData = [NSData dataWithContentsOfURL: [NSURL URLWithString:url]];
+    NSError* error;
+    NSDictionary *resultados = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error];
+    
+    if(!error){
+        NSArray *postsArray = [resultados objectForKey:@"posts"];
+    
+        for (NSDictionary *post in postsArray ){
+            Evento *evento = [Evento withDictionary: post];
+            [self addEventoWithEvento:evento];
+        }
+    }
 }
 
 - (void)setMasterEventoList:(NSMutableArray *)newList {

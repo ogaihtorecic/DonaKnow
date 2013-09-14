@@ -13,8 +13,11 @@
 @interface EventoDataController : NSObject
 
 @property (nonatomic, copy) NSMutableArray *masterEventoList;
+
 - (NSUInteger)countOfList;
+
 - (Evento *)objectInListAtIndex:(NSUInteger)theIndex;
+
 - (void)addEventoWithEvento:(Evento *)evento;
 
 @end

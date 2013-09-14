@@ -17,4 +17,6 @@
 
 -(id)initWithNome:(NSString *)nome local:(NSString *)local endereco:(NSString *)endereco observacoes:(NSString *)observacoes;
 
++ (Evento *) withDictionary: (NSDictionary *) dictionary;
+
 @end

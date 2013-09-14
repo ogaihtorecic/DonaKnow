@@ -24,4 +24,19 @@
     return nil;
 }
 
++ (Evento *) withDictionary: (NSDictionary *) dictionary {
+    Evento * evento = [[Evento alloc] init];
+    [evento setNome: [dictionary objectForKey:@"title"]];
+    
+    NSArray *termsArray = [dictionary objectForKey:@"terms"];
+    for (NSDictionary *term in termsArray){
+        [evento setLocal: [term objectForKey:@"title"]];
+        [evento setEndereco: [term objectForKey:@"description"]];
+    }
+    
+    [evento setObservacoes: @"Observacoes"];
+    
+    return evento;
+}
+
 @end
