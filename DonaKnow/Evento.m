@@ -13,21 +13,27 @@
 + (Evento *) withDictionary: (NSDictionary *) dictionary {
     Evento * evento = [[Evento alloc] init];
     [evento setNome: [dictionary objectForKey:@"title"]];
-    [evento setThumbnail: [dictionary objectForKey:@"thumbnail"]];
+    
+    NSArray *attachmentsArray = [dictionary objectForKey:@"attachments"];
+    if(attachmentsArray.count > 0) {
+        NSDictionary *attachment = [attachmentsArray objectAtIndex:[attachmentsArray count] - 1];
+        NSString *thumbnail = [[[attachment objectForKey:@"images"] objectForKey:@"small"] objectForKey:@"url"];
+        [evento setThumbnail: thumbnail];
+    }
     
     NSArray *termsArray = [dictionary objectForKey:@"terms"];
-    for (NSDictionary *term in termsArray){
-        [evento setLocal: [term objectForKey:@"title"]];
-        [evento setEndereco: [term objectForKey:@"description"]];
-    }
+    
+    NSDictionary *term = [termsArray objectAtIndex:0];
+    [evento setLocal: [term objectForKey:@"title"]];
+    [evento setEndereco: [term objectForKey:@"description"]];
     
     NSDictionary *customFields = [dictionary objectForKey:@"custom_fields"];
     
     NSArray *atracoesArray = [customFields objectForKey:@"bandas"];
-    [evento setAtracoes: [atracoesArray componentsJoinedByString:@", "]];
+    [evento setAtracoes: [atracoesArray objectAtIndex:0]];
     
     NSArray *informacoesArray = [customFields objectForKey:@"informacoes"];
-    [evento setInformacoes: [informacoesArray componentsJoinedByString:@", "]];
+    [evento setInformacoes: [informacoesArray objectAtIndex:0]];
     
     NSArray *valorArray = [customFields objectForKey:@"quanto"];
     [evento setValor: [valorArray objectAtIndex:0]];

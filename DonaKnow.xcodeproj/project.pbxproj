@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		AF05F96A17E6B17F0045D778 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF05F96917E6B17F0045D778 /* SDWebImage.framework */; };
 		AF05F96C17E6B1C00045D778 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF05F96B17E6B1C00045D778 /* ImageIO.framework */; };
-		AF05F96E17E6B3660045D778 /* 11-clock.png in Resources */ = {isa = PBXBuildFile; fileRef = AF05F96D17E6B3660045D778 /* 11-clock.png */; };
+		AFE72C7317E7BAED000C2391 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE72C7217E7BAED000C2391 /* placeholder.png */; };
 		AFE954C617E41DD800D28E13 /* Evento.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE954C517E41DD800D28E13 /* Evento.m */; };
 		AFE954C917E41F6B00D28E13 /* EventoDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE954C817E41F6B00D28E13 /* EventoDataController.m */; };
 		AFE954CC17E421FC00D28E13 /* EventosMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE954CB17E421FC00D28E13 /* EventosMasterViewController.m */; };
@@ -47,7 +47,7 @@
 /* Begin PBXFileReference section */
 		AF05F96917E6B17F0045D778 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = DonaKnow/SDWebImage.framework; sourceTree = "<group>"; };
 		AF05F96B17E6B1C00045D778 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
-		AF05F96D17E6B3660045D778 /* 11-clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "11-clock.png"; sourceTree = "<group>"; };
+		AFE72C7217E7BAED000C2391 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		AFE954C417E41DD800D28E13 /* Evento.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Evento.h; sourceTree = "<group>"; };
 		AFE954C517E41DD800D28E13 /* Evento.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Evento.m; sourceTree = "<group>"; };
 		AFE954C717E41F6B00D28E13 /* EventoDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventoDataController.h; sourceTree = "<group>"; };
@@ -161,7 +161,7 @@
 		AFF879B717E138CC001C0BE7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				AF05F96D17E6B3660045D778 /* 11-clock.png */,
+				AFE72C7217E7BAED000C2391 /* placeholder.png */,
 				AFF879FA17E139D8001C0BE7 /* 28-star.png */,
 				AFF879F617E139A1001C0BE7 /* 88-beer-mug.png */,
 				AFF879F717E139A1001C0BE7 /* 172-pricetag.png */,
@@ -280,7 +280,7 @@
 				AFF879F817E139A1001C0BE7 /* 88-beer-mug.png in Resources */,
 				AFF879F917E139A1001C0BE7 /* 172-pricetag.png in Resources */,
 				AFF879FB17E139D8001C0BE7 /* 28-star.png in Resources */,
-				AF05F96E17E6B3660045D778 /* 11-clock.png in Resources */,
+				AFE72C7317E7BAED000C2391 /* placeholder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

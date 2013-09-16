@@ -59,7 +59,7 @@
     [[cell textLabel] setText:eventoAtIndex.nome];
     [[cell detailTextLabel] setText:eventoAtIndex.local];
     
-    [cell.imageView setImageWithURL:[NSURL URLWithString:eventoAtIndex.thumbnail] placeholderImage:[UIImage imageNamed:@"11-clock.png"]];
+    [cell.imageView setImageWithURL:[NSURL URLWithString:eventoAtIndex.thumbnail] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     
     return cell;
 }
