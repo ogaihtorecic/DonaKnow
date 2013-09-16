@@ -51,16 +51,13 @@
     
     static NSString *CellIdentifier = @"EventoCell";
     
-    static NSDateFormatter *formatter = nil;
-    if (formatter == nil) {
-        formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateStyle:NSDateFormatterMediumStyle];
-    }
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     Evento *eventoAtIndex = [self.dataController objectInListAtIndex:indexPath.row];
     [[cell textLabel] setText:eventoAtIndex.nome];
     [[cell detailTextLabel] setText:eventoAtIndex.local];
+    
+    cell.imageView.image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:eventoAtIndex.thumbnail]]];
     
     return cell;
 }

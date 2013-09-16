@@ -16,6 +16,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *nomeEventoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *localLabel;
 @property (weak, nonatomic) IBOutlet UILabel *enderecoLabel;
+@property (weak, nonatomic) IBOutlet UILabel *atracoesLabel;
+@property (weak, nonatomic) IBOutlet UILabel *informacoesLabel;
+@property (weak, nonatomic) IBOutlet UILabel *valorLabel;
 @property (weak, nonatomic) IBOutlet UILabel *observacoesLabel;
 
 @end

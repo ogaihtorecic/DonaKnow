@@ -13,9 +13,12 @@
 @property (nonatomic, copy) NSString *nome;
 @property (nonatomic, copy) NSString *local;
 @property (nonatomic, copy) NSString *endereco;
+@property (nonatomic, copy) NSString *atracoes;
+@property (nonatomic, copy) NSString *informacoes;
+@property (nonatomic, copy) NSString *valor;
 @property (nonatomic, copy) NSString *observacoes;
 
--(id)initWithNome:(NSString *)nome local:(NSString *)local endereco:(NSString *)endereco observacoes:(NSString *)observacoes;
+@property (nonatomic, copy) NSString *thumbnail;
 
 + (Evento *) withDictionary: (NSDictionary *) dictionary;
 

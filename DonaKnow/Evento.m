@@ -10,23 +10,10 @@
 
 @implementation Evento
 
--(id)initWithNome:(NSString *)nome local:(NSString *)local endereco:(NSString *)endereco observacoes:(NSString *)observacoes
-{
-    self = [super init];
-    if (self) {
-        _nome = nome;
-        _local = local;
-        _endereco = endereco;
-        _observacoes = observacoes;
-        
-        return self;
-    }
-    return nil;
-}
-
 + (Evento *) withDictionary: (NSDictionary *) dictionary {
     Evento * evento = [[Evento alloc] init];
     [evento setNome: [dictionary objectForKey:@"title"]];
+    [evento setThumbnail: [dictionary objectForKey:@"thumbnail"]];
     
     NSArray *termsArray = [dictionary objectForKey:@"terms"];
     for (NSDictionary *term in termsArray){
@@ -34,7 +21,19 @@
         [evento setEndereco: [term objectForKey:@"description"]];
     }
     
-    [evento setObservacoes: @"Observacoes"];
+    NSDictionary *customFields = [dictionary objectForKey:@"custom_fields"];
+    
+    NSArray *atracoesArray = [customFields objectForKey:@"bandas"];
+    [evento setAtracoes: [atracoesArray componentsJoinedByString:@", "]];
+    
+    NSArray *informacoesArray = [customFields objectForKey:@"informacoes"];
+    [evento setInformacoes: [informacoesArray componentsJoinedByString:@", "]];
+    
+    NSArray *valorArray = [customFields objectForKey:@"quanto"];
+    [evento setValor: [valorArray objectAtIndex:0]];
+    
+    NSArray *observacaoArray = [customFields objectForKey:@"observacao"];
+    [evento setObservacoes: [observacaoArray objectAtIndex:0]];
     
     return evento;
 }
