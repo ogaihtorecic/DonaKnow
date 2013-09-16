@@ -12,6 +12,8 @@
 #import "EventoDataController.h"
 #import "Evento.h"
 
+#import <SDWebImage/UIImageView+WebCache.h>
+
 @interface EventosMasterViewController ()
 
 @end
@@ -57,7 +59,7 @@
     [[cell textLabel] setText:eventoAtIndex.nome];
     [[cell detailTextLabel] setText:eventoAtIndex.local];
     
-    cell.imageView.image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:eventoAtIndex.thumbnail]]];
+    [cell.imageView setImageWithURL:[NSURL URLWithString:eventoAtIndex.thumbnail] placeholderImage:[UIImage imageNamed:@"11-clock.png"]];
     
     return cell;
 }
