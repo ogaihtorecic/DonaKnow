@@ -14,13 +14,25 @@
     Evento * evento = [[Evento alloc] init];
     [evento setNome: [dictionary objectForKey:@"title"]];
     
+    NSDateFormatter *stringFormatter = [[NSDateFormatter alloc] init];
+    [stringFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate *date = [stringFormatter dateFromString:[dictionary objectForKey:@"date"]];
+    [evento setData: date];
+    
+    NSArray *categoriesArray = [dictionary objectForKey:@"categories"];
+    NSMutableArray *categorias = [[NSMutableArray alloc] init];
+    for (NSDictionary *categoria in categoriesArray) {
+        [categorias addObject:[categoria objectForKey:@"id"]];
+    }
+    [evento setCategorias:categorias];
+    
     NSArray *attachmentsArray = [dictionary objectForKey:@"attachments"];
     if(attachmentsArray.count > 0) {
         NSDictionary *attachment = [attachmentsArray objectAtIndex:[attachmentsArray count] - 1];
         NSString *thumbnail = [[[attachment objectForKey:@"images"] objectForKey:@"small"] objectForKey:@"url"];
         [evento setThumbnail: thumbnail];
     }
-    
+
     NSArray *termsArray = [dictionary objectForKey:@"terms"];
     
     NSDictionary *term = [termsArray objectAtIndex:0];

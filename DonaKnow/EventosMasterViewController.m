@@ -20,11 +20,11 @@
 
 @implementation EventosMasterViewController
 
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-    self.dataController = [[EventoDataController alloc] init];
-}
+//- (void)awakeFromNib
+//{
+//    [super awakeFromNib];
+//    self.dataController = [[EventoDataController alloc] init];
+//}
 
 - (void)viewDidLoad
 {

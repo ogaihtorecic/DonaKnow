@@ -24,10 +24,10 @@
             </objects>
             <point key="canvasLocation" x="103" y="942"/>
         </scene>
-        <!--Eventos Master View Controller - Eventos do Dia-->
+        <!--Eventos Dia Master View Controller - Eventos do Dia-->
         <scene sceneID="ooA-Xl-Isc">
             <objects>
-                <tableViewController id="GNE-NZ-pg7" customClass="EventosMasterViewController" sceneMemberID="viewController">
+                <tableViewController id="GNE-NZ-pg7" customClass="EventosDiaMasterViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="bx4-Jh-Lil">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -151,8 +151,33 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="vth-FQ-bhn" detailTextLabel="Iuv-sh-yUu" style="IBUITableViewCellStyleValue2" id="6Pa-M7-pUm">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="9PU-CE-Ib8" detailTextLabel="J7O-jy-ah8" style="IBUITableViewCellStyleValue2" id="iVL-JQ-8wL">
                                         <rect key="frame" x="0.0" y="132" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Data" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9PU-CE-Ib8">
+                                                    <rect key="frame" x="10" y="15" width="91" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                    <color key="textColor" red="0.32156862749999998" green="0.40000000000000002" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="J7O-jy-ah8">
+                                                    <rect key="frame" x="107" y="12" width="41" height="19"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="vth-FQ-bhn" detailTextLabel="Iuv-sh-yUu" style="IBUITableViewCellStyleValue2" id="6Pa-M7-pUm">
+                                        <rect key="frame" x="0.0" y="176" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -177,7 +202,7 @@
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Xq2-0O-MD2" detailTextLabel="Gh3-pu-AIQ" style="IBUITableViewCellStyleValue2" id="M2S-Ju-cp9">
-                                        <rect key="frame" x="0.0" y="176" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="220" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -202,7 +227,7 @@
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="b7y-7H-CbW" detailTextLabel="n9d-34-PTB" style="IBUITableViewCellStyleValue2" id="mHk-ei-UdY">
-                                        <rect key="frame" x="0.0" y="220" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="264" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -227,7 +252,7 @@
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="xoX-JN-GJj" detailTextLabel="QoW-zE-oIR" style="IBUITableViewCellStyleValue2" id="44Q-s5-10i">
-                                        <rect key="frame" x="0.0" y="264" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="308" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -262,6 +287,7 @@
                     <navigationItem key="navigationItem" id="Wlp-NK-sYG"/>
                     <connections>
                         <outlet property="atracoesLabel" destination="Iuv-sh-yUu" id="uQ0-hG-Nbr"/>
+                        <outlet property="dataLabel" destination="J7O-jy-ah8" id="0Rl-7D-nwu"/>
                         <outlet property="enderecoLabel" destination="pn2-5s-B05" id="afs-b2-1xo"/>
                         <outlet property="informacoesLabel" destination="Gh3-pu-AIQ" id="rA1-rG-4Fw"/>
                         <outlet property="localLabel" destination="t8z-6Q-u2Z" id="We0-oJ-rb2"/>
@@ -274,10 +300,10 @@
             </objects>
             <point key="canvasLocation" x="1770" y="942"/>
         </scene>
-        <!--Eventos Master View Controller - Destaques-->
+        <!--Eventos Destaques Master View Controller - Destaques-->
         <scene sceneID="XbV-dW-VKf">
             <objects>
-                <tableViewController id="dej-8U-Ipp" customClass="EventosMasterViewController" sceneMemberID="viewController">
+                <tableViewController id="dej-8U-Ipp" customClass="EventosDestaquesMasterViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="7xY-KX-uUJ">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -331,10 +357,10 @@
             </objects>
             <point key="canvasLocation" x="640" y="942"/>
         </scene>
-        <!--Eventos Master View Controller - Grátis-->
+        <!--Eventos Gratis Master View Controller - Grátis-->
         <scene sceneID="YcZ-MY-t0W">
             <objects>
-                <tableViewController id="p96-0G-omo" customClass="EventosMasterViewController" sceneMemberID="viewController">
+                <tableViewController id="p96-0G-omo" customClass="EventosGratisMasterViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Vpi-2u-VSV">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -415,6 +441,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EventoDetailViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="atracoesLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="dataLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="enderecoLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="informacoesLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="localLabel" candidateClass="UILabel"/>
@@ -422,6 +449,15 @@
                 <relationship kind="outlet" name="observacoesLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="valorLabel" candidateClass="UILabel"/>
             </relationships>
+        </class>
+        <class className="EventosDestaquesMasterViewController" superclassName="EventosMasterViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EventosDestaquesMasterViewController.h"/>
+        </class>
+        <class className="EventosDiaMasterViewController" superclassName="EventosMasterViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EventosDiaMasterViewController.h"/>
+        </class>
+        <class className="EventosGratisMasterViewController" superclassName="EventosMasterViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EventosGratisMasterViewController.h"/>
         </class>
         <class className="EventosMasterViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EventosMasterViewController.h"/>

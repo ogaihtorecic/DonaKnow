@@ -45,6 +45,11 @@
         self.enderecoLabel.text = theEvento.endereco;
         self.enderecoLabel.numberOfLines = 2;
         
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"dd/MM/yyyy 'às' HH:mm"];
+        
+        self.dataLabel.text = [formatter stringFromDate:theEvento.data];
+        
         self.atracoesLabel.text = theEvento.atracoes;
         self.atracoesLabel.numberOfLines = 2;
         
