@@ -20,4 +20,6 @@
 
 - (void)addEventoWithEvento:(Evento *)evento;
 
+- (void)reloadWithData:(NSData *)data;
+
 @end

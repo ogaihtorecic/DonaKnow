@@ -16,6 +16,8 @@
 
 @interface EventosMasterViewController ()
 
+- (void) loadDataWithOperation;
+
 @end
 
 @implementation EventosMasterViewController
@@ -30,6 +32,24 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void) loadData {
+    
+    NSOperationQueue *queue = [NSOperationQueue new];
+    
+    NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(loadDataWithOperation) object:nil];
+    
+    [queue addOperation:operation];
+}
+
+- (void) loadDataWithOperation {
+    NSString *url = [NSString stringWithFormat:@"http://dk.aondefui.com/?json=1&custom_fields=quanto,bandas,observacao,informacoes&taxonomy=local&taxonomy_fields=cidade,mapa_do_local"];
+    NSData *jsonData = [NSData dataWithContentsOfURL: [NSURL URLWithString:url]];
+    
+    [self.dataController reloadWithData:jsonData];
+    
+    [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
 }
 
 - (void)didReceiveMemoryWarning

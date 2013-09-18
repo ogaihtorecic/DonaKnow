@@ -14,4 +14,6 @@
 
 @property (strong, nonatomic) EventoDataController *dataController;
 
+- (void) loadData;
+
 @end
