@@ -25,12 +25,19 @@
 
 @implementation EventosMasterViewController
 
+BOOL loadDataRunning = false;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.navigationItem.rightBarButtonItem.target = self;
     self.navigationItem.rightBarButtonItem.action = @selector(refreshButtonLoadData);
+    
+    self.tabBarController.delegate = self;
+}
+
+-(BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+    return !loadDataRunning;
 }
 
 - (void) loadData {
@@ -64,13 +71,17 @@
     self.navigationItem.rightBarButtonItem.enabled = FALSE;
     [self.tableView setUserInteractionEnabled:FALSE];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    loadDataRunning = true;
 }
 
 - (void)dismissWaitMessage {
     self.navigationItem.rightBarButtonItem.enabled = TRUE;
     [self.tableView setUserInteractionEnabled:TRUE];
     [MBProgressHUD hideHUDForView:self.view animated:YES];
+    loadDataRunning = false;
 }
+
+
 
 - (void)didReceiveMemoryWarning
 {

@@ -10,7 +10,7 @@
 
 @class EventoDataController;
 
-@interface EventosMasterViewController : UITableViewController
+@interface EventosMasterViewController : UITableViewController<UITabBarControllerDelegate>
 
 @property (strong, nonatomic) EventoDataController *dataController;
 
