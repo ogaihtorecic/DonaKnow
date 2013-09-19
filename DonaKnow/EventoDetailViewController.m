@@ -57,7 +57,9 @@
         self.informacoesLabel.numberOfLines = 2;
         
         self.valorLabel.text = theEvento.valor;
+        
         self.observacoesLabel.text = theEvento.observacoes;
+        self.observacoesLabel.numberOfLines = 2;
     }
 }
 

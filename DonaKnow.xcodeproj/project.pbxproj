@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AF05F96A17E6B17F0045D778 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF05F96917E6B17F0045D778 /* SDWebImage.framework */; };
 		AF05F96C17E6B1C00045D778 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF05F96B17E6B1C00045D778 /* ImageIO.framework */; };
+		AFA0739A17EA878700EB7728 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AFA0739917EA878700EB7728 /* MBProgressHUD.m */; };
 		AFE2CB3917E8080A00F229B2 /* EventosDiaDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE2CB3817E8080A00F229B2 /* EventosDiaDataController.m */; };
 		AFE2CB3C17E80AFC00F229B2 /* EventosDiaMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE2CB3B17E80AFC00F229B2 /* EventosDiaMasterViewController.m */; };
 		AFE2CB3F17E80DD300F229B2 /* EventosDestaquesDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE2CB3E17E80DD300F229B2 /* EventosDestaquesDataController.m */; };
@@ -53,6 +54,8 @@
 /* Begin PBXFileReference section */
 		AF05F96917E6B17F0045D778 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = DonaKnow/SDWebImage.framework; sourceTree = "<group>"; };
 		AF05F96B17E6B1C00045D778 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		AFA0739817EA878700EB7728 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		AFA0739917EA878700EB7728 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		AFE2CB3717E8080A00F229B2 /* EventosDiaDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventosDiaDataController.h; sourceTree = "<group>"; };
 		AFE2CB3817E8080A00F229B2 /* EventosDiaDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventosDiaDataController.m; sourceTree = "<group>"; };
 		AFE2CB3A17E80AFC00F229B2 /* EventosDiaMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventosDiaMasterViewController.h; sourceTree = "<group>"; };
@@ -207,6 +210,8 @@
 		AFF879B717E138CC001C0BE7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AFA0739817EA878700EB7728 /* MBProgressHUD.h */,
+				AFA0739917EA878700EB7728 /* MBProgressHUD.m */,
 				AFE72C7217E7BAED000C2391 /* placeholder.png */,
 				AFF879FA17E139D8001C0BE7 /* 28-star.png */,
 				AFF879F617E139A1001C0BE7 /* 88-beer-mug.png */,
@@ -373,6 +378,7 @@
 				AFE2CB4217E8108900F229B2 /* EventosDestaquesMasterViewController.m in Sources */,
 				AFE2CB4717E812DD00F229B2 /* EventosGratisDataController.m in Sources */,
 				AFE2CB4A17E8136700F229B2 /* EventosGratisMasterViewController.m in Sources */,
+				AFA0739A17EA878700EB7728 /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

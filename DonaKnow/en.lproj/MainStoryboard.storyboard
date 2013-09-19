@@ -59,7 +59,9 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Eventos do Dia" id="t6x-bU-NlS"/>
+                    <navigationItem key="navigationItem" title="Eventos do Dia" id="t6x-bU-NlS">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="I3y-A6-VBZ"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CFQ-TE-28b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -469,6 +471,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="0q6-Tg-TrQ"/>
+        <segue reference="tzX-I6-3Dv"/>
     </inferredMetricsTieBreakers>
 </document>

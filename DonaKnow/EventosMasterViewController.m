@@ -11,45 +11,65 @@
 #import "EventoDetailViewController.h"
 #import "EventoDataController.h"
 #import "Evento.h"
+#import "MBProgressHUD.h"
 
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface EventosMasterViewController ()
 
 - (void) loadDataWithOperation;
+- (void) showWaitMessage;
+- (void) dismissWaitMessage;
 
 @end
 
 @implementation EventosMasterViewController
 
-//- (void)awakeFromNib
-//{
-//    [super awakeFromNib];
-//    self.dataController = [[EventoDataController alloc] init];
-//}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.navigationItem.rightBarButtonItem.target = self;
+    self.navigationItem.rightBarButtonItem.action = @selector(refreshButtonLoadData);
 }
 
 - (void) loadData {
-    
     NSOperationQueue *queue = [NSOperationQueue new];
     
     NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(loadDataWithOperation) object:nil];
     
     [queue addOperation:operation];
+    
+}
+
+- (void) refreshButtonLoadData {
+    [self loadData];
+    [[[[self.tabBarController.viewControllers objectAtIndex:1] viewControllers] objectAtIndex:0] loadData];
+    [[[[self.tabBarController.viewControllers objectAtIndex:2] viewControllers] objectAtIndex:0] loadData];
 }
 
 - (void) loadDataWithOperation {
+    [self performSelectorOnMainThread:@selector(showWaitMessage) withObject:nil waitUntilDone:YES];
+    
     NSString *url = [NSString stringWithFormat:@"http://dk.aondefui.com/?json=1&custom_fields=quanto,bandas,observacao,informacoes&taxonomy=local&taxonomy_fields=cidade,mapa_do_local"];
     NSData *jsonData = [NSData dataWithContentsOfURL: [NSURL URLWithString:url]];
     
     [self.dataController reloadWithData:jsonData];
     
     [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
+    [self performSelectorOnMainThread:@selector(dismissWaitMessage) withObject:nil waitUntilDone:YES];
+}
+
+- (void)showWaitMessage {
+    self.navigationItem.rightBarButtonItem.enabled = FALSE;
+    [self.tableView setUserInteractionEnabled:FALSE];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+}
+
+- (void)dismissWaitMessage {
+    self.navigationItem.rightBarButtonItem.enabled = TRUE;
+    [self.tableView setUserInteractionEnabled:TRUE];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
