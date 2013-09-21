@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @class Evento;
 
-@interface EventoDetailViewController : UITableViewController
+@interface EventoDetailViewController : UITableViewController<UITableViewDelegate>
 
 @property (strong, nonatomic) Evento *evento;
 @property (weak, nonatomic) IBOutlet UILabel *nomeEventoLabel;

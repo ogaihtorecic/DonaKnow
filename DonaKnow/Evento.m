@@ -53,6 +53,25 @@
     NSArray *observacaoArray = [customFields objectForKey:@"observacao"];
     [evento setObservacoes: [observacaoArray objectAtIndex:0]];
     
+    NSString *mapaString = [[term objectForKey:@"custom_fields"] objectForKey:@"mapa_do_local"];
+    
+    NSString *param = nil;
+    NSRange start = [mapaString rangeOfString:@"q="];
+    if (start.location != NSNotFound)
+    {
+        param = [mapaString substringFromIndex:start.location + start.length];
+        NSRange end = [param rangeOfString:@"&"];
+        if (end.location != NSNotFound)
+        {
+            param = [param substringToIndex:end.location];
+            NSArray *array = [param componentsSeparatedByString:@","];
+            
+            evento.latitude = [[array objectAtIndex:0] doubleValue];
+            evento.longitude = [[array objectAtIndex:1] doubleValue];
+        }
+
+    }
+    
     return evento;
 }
 

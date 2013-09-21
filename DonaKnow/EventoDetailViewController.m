@@ -7,7 +7,6 @@
 //
 
 #import "EventoDetailViewController.h"
-
 #import "Evento.h"
 
 @interface EventoDetailViewController ()
@@ -60,6 +59,36 @@
         
         self.observacoesLabel.text = theEvento.observacoes;
         self.observacoesLabel.numberOfLines = 2;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    
+    if([cell.reuseIdentifier isEqualToString:@"EnderecoCell"]) {
+        Evento *theEvento = self.evento;
+        if(theEvento.latitude != 0.000000 && theEvento.longitude != 0.000000) {
+            Class mapItemClass = [MKMapItem class];
+            if (mapItemClass && [mapItemClass respondsToSelector:@selector(openMapsWithItems:launchOptions:)])
+            {
+                // Create an MKMapItem to pass to the Maps app
+                CLLocationCoordinate2D coordinate =
+                CLLocationCoordinate2DMake(theEvento.latitude, theEvento.longitude);
+                MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:coordinate addressDictionary:nil];
+                MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
+                [mapItem setName:theEvento.local];
+                
+                // Set the directions mode to "Walking"
+                // Can use MKLaunchOptionsDirectionsModeDriving instead
+                NSDictionary *launchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking};
+                // Get the "Current User Location" MKMapItem
+                MKMapItem *currentLocationMapItem = [MKMapItem mapItemForCurrentLocation];
+                // Pass the current location and destination map items to the Maps app
+                // Set the direction mode in the launchOptions dictionary
+                [MKMapItem openMapsWithItems:@[currentLocationMapItem, mapItem] 
+                               launchOptions:launchOptions];
+            }
+        }
     }
 }
 

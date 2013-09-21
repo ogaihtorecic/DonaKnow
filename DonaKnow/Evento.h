@@ -23,6 +23,9 @@
 
 @property (nonatomic, copy) NSMutableArray *categorias;
 
+@property (nonatomic) double latitude;
+@property (nonatomic) double longitude;
+
 + (Evento *) withDictionary: (NSDictionary *) dictionary;
 
 @end

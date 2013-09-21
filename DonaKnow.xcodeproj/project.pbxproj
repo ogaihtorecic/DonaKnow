@@ -21,6 +21,8 @@
 		AFE954C917E41F6B00D28E13 /* EventoDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE954C817E41F6B00D28E13 /* EventoDataController.m */; };
 		AFE954CC17E421FC00D28E13 /* EventosMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE954CB17E421FC00D28E13 /* EventosMasterViewController.m */; };
 		AFE954CF17E4241000D28E13 /* EventoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE954CE17E4241000D28E13 /* EventoDetailViewController.m */; };
+		AFEF025917EE432700775CDD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFEF025817EE432700775CDD /* MapKit.framework */; };
+		AFEF025B17EE444900775CDD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFEF025A17EE444900775CDD /* CoreLocation.framework */; };
 		AFF879B117E138CC001C0BE7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFF879B017E138CC001C0BE7 /* UIKit.framework */; };
 		AFF879B317E138CC001C0BE7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFF879B217E138CC001C0BE7 /* Foundation.framework */; };
 		AFF879B517E138CC001C0BE7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFF879B417E138CC001C0BE7 /* CoreGraphics.framework */; };
@@ -77,6 +79,8 @@
 		AFE954CB17E421FC00D28E13 /* EventosMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventosMasterViewController.m; sourceTree = "<group>"; };
 		AFE954CD17E4241000D28E13 /* EventoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventoDetailViewController.h; sourceTree = "<group>"; };
 		AFE954CE17E4241000D28E13 /* EventoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventoDetailViewController.m; sourceTree = "<group>"; };
+		AFEF025817EE432700775CDD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		AFEF025A17EE444900775CDD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		AFF879AD17E138CC001C0BE7 /* DonaKnow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DonaKnow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFF879B017E138CC001C0BE7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AFF879B217E138CC001C0BE7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -107,6 +111,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFEF025B17EE444900775CDD /* CoreLocation.framework in Frameworks */,
+				AFEF025917EE432700775CDD /* MapKit.framework in Frameworks */,
 				AF05F96C17E6B1C00045D778 /* ImageIO.framework in Frameworks */,
 				AFF879B117E138CC001C0BE7 /* UIKit.framework in Frameworks */,
 				AFF879B317E138CC001C0BE7 /* Foundation.framework in Frameworks */,
@@ -185,6 +191,8 @@
 		AFF879AF17E138CC001C0BE7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AFEF025A17EE444900775CDD /* CoreLocation.framework */,
+				AFEF025817EE432700775CDD /* MapKit.framework */,
 				AF05F96917E6B17F0045D778 /* SDWebImage.framework */,
 				AFF879B017E138CC001C0BE7 /* UIKit.framework */,
 				AFF879B217E138CC001C0BE7 /* Foundation.framework */,
