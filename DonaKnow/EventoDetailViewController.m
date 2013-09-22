@@ -8,6 +8,9 @@
 
 #import "EventoDetailViewController.h"
 #import "Evento.h"
+#import "PhotoViewController.h"
+
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface EventoDetailViewController ()
 
@@ -38,18 +41,19 @@ NSMutableArray *values;
     Evento *theEvento = self.evento;
     
     if (theEvento) {
+        
+        self.nomeEventoLabel.text = theEvento.nome;
+        self.nomeEventoLabel.numberOfLines = 2;
+        
+        self.localLabel.text = theEvento.local;
+        self.localLabel.numberOfLines = 2;
+        
+        [self.imagemEvento setImageWithURL:[NSURL URLWithString:theEvento.poster] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+        
+        //[self.imagemEventoButton setImage:self.imagemEvento.image forState:UIControlStateNormal];
+        
         keys = [[NSMutableArray alloc] init];
         values = [[NSMutableArray alloc] init];
-        
-        if([theEvento.nome length] > 0) {
-            [keys addObject:@"Nome"];
-            [values addObject:theEvento.nome];
-        }
-        
-        if([theEvento.local length] > 0) {
-            [keys addObject:@"Local"];
-            [values addObject:theEvento.local];
-        }
         
         if([theEvento.endereco length] > 0) {
             [keys addObject:@"Endereço"];
@@ -152,6 +156,14 @@ NSMutableArray *values;
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self configureView];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"ShowPhoto"]) {
+        
+        PhotoViewController *photoController = [segue destinationViewController];
+        photoController.evento = self.evento;
+    }
 }
 
 @end

@@ -17,11 +17,7 @@
 @property (strong, nonatomic) Evento *evento;
 @property (weak, nonatomic) IBOutlet UILabel *nomeEventoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *localLabel;
-@property (weak, nonatomic) IBOutlet UILabel *enderecoLabel;
-@property (weak, nonatomic) IBOutlet UILabel *dataLabel;
-@property (weak, nonatomic) IBOutlet UILabel *atracoesLabel;
-@property (weak, nonatomic) IBOutlet UILabel *informacoesLabel;
-@property (weak, nonatomic) IBOutlet UILabel *valorLabel;
-@property (weak, nonatomic) IBOutlet UILabel *observacoesLabel;
+@property (weak, nonatomic) IBOutlet UIButton *imagemEventoButton;
+@property (weak, nonatomic) IBOutlet UIImageView *imagemEvento;
 
 @end

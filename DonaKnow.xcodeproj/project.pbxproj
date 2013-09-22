@@ -10,6 +10,7 @@
 		AF05F96A17E6B17F0045D778 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF05F96917E6B17F0045D778 /* SDWebImage.framework */; };
 		AF05F96C17E6B1C00045D778 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF05F96B17E6B1C00045D778 /* ImageIO.framework */; };
 		AFA0739A17EA878700EB7728 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AFA0739917EA878700EB7728 /* MBProgressHUD.m */; };
+		AFCBE41F17EEB57A00FBC0C3 /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCBE41E17EEB57A00FBC0C3 /* PhotoViewController.m */; };
 		AFE2CB3917E8080A00F229B2 /* EventosDiaDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE2CB3817E8080A00F229B2 /* EventosDiaDataController.m */; };
 		AFE2CB3C17E80AFC00F229B2 /* EventosDiaMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE2CB3B17E80AFC00F229B2 /* EventosDiaMasterViewController.m */; };
 		AFE2CB3F17E80DD300F229B2 /* EventosDestaquesDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE2CB3E17E80DD300F229B2 /* EventosDestaquesDataController.m */; };
@@ -58,6 +59,8 @@
 		AF05F96B17E6B1C00045D778 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		AFA0739817EA878700EB7728 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		AFA0739917EA878700EB7728 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		AFCBE41D17EEB57A00FBC0C3 /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
+		AFCBE41E17EEB57A00FBC0C3 /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
 		AFE2CB3717E8080A00F229B2 /* EventosDiaDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventosDiaDataController.h; sourceTree = "<group>"; };
 		AFE2CB3817E8080A00F229B2 /* EventosDiaDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventosDiaDataController.m; sourceTree = "<group>"; };
 		AFE2CB3A17E80AFC00F229B2 /* EventosDiaMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventosDiaMasterViewController.h; sourceTree = "<group>"; };
@@ -164,6 +167,8 @@
 				AFE2CB4917E8136700F229B2 /* EventosGratisMasterViewController.m */,
 				AFE954CD17E4241000D28E13 /* EventoDetailViewController.h */,
 				AFE954CE17E4241000D28E13 /* EventoDetailViewController.m */,
+				AFCBE41D17EEB57A00FBC0C3 /* PhotoViewController.h */,
+				AFCBE41E17EEB57A00FBC0C3 /* PhotoViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -387,6 +392,7 @@
 				AFE2CB4717E812DD00F229B2 /* EventosGratisDataController.m in Sources */,
 				AFE2CB4A17E8136700F229B2 /* EventosGratisMasterViewController.m in Sources */,
 				AFA0739A17EA878700EB7728 /* MBProgressHUD.m in Sources */,
+				AFCBE41F17EEB57A00FBC0C3 /* PhotoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

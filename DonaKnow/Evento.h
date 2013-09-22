@@ -20,6 +20,8 @@
 @property (nonatomic, copy) NSString *observacoes;
 
 @property (nonatomic, copy) NSString *thumbnail;
+@property (nonatomic, copy) NSString *poster;
+@property (nonatomic, copy) NSString *posterGrande;
 
 @property (nonatomic, copy) NSMutableArray *categorias;
 

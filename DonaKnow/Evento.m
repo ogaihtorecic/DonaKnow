@@ -29,8 +29,15 @@
     NSArray *attachmentsArray = [dictionary objectForKey:@"attachments"];
     if(attachmentsArray.count > 0) {
         NSDictionary *attachment = [attachmentsArray objectAtIndex:[attachmentsArray count] - 1];
+
         NSString *thumbnail = [[[attachment objectForKey:@"images"] objectForKey:@"small"] objectForKey:@"url"];
         [evento setThumbnail: thumbnail];
+        
+        NSString *poster = [[[attachment objectForKey:@"images"] objectForKey:@"post-thumbnail"] objectForKey:@"url"];
+        [evento setPoster: poster];
+        
+        NSString *posterGrande = [[[attachment objectForKey:@"images"] objectForKey:@"full"] objectForKey:@"url"];
+        [evento setPosterGrande: posterGrande];
     }
 
     NSArray *termsArray = [dictionary objectForKey:@"terms"];
