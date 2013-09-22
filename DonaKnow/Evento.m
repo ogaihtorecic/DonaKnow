@@ -45,7 +45,10 @@
     [evento setAtracoes: [atracoesArray objectAtIndex:0]];
     
     NSArray *informacoesArray = [customFields objectForKey:@"informacoes"];
-    [evento setInformacoes: [informacoesArray objectAtIndex:0]];
+    NSString *informacoes = [informacoesArray objectAtIndex:0];
+    informacoes = [informacoes stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    informacoes = [informacoes stringByReplacingOccurrencesOfString:@" " withString:@"-"];
+    [evento setInformacoes: informacoes];
     
     NSArray *valorArray = [customFields objectForKey:@"quanto"];
     [evento setValor: [valorArray objectAtIndex:0]];

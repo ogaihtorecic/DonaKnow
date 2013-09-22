@@ -106,7 +106,8 @@ NSMutableArray *values;
     cell.textLabel.text = [keys objectAtIndex:indexPath.row];
     cell.detailTextLabel.text = [values objectAtIndex:indexPath.row];
     
-    if([cell.textLabel.text isEqualToString:@"Endereço"] && self.evento.latitude != 0.000000 && self.evento.longitude != 0.000000) {
+    if(([cell.textLabel.text isEqualToString:@"Endereço"] && self.evento.latitude != 0.000000 && self.evento.longitude != 0.000000) ||
+        [cell.textLabel.text isEqualToString:@"Informações"]) {
         cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     }
     
@@ -140,6 +141,9 @@ NSMutableArray *values;
                                launchOptions:launchOptions];
             }
         }
+    } else if([cell.textLabel.text isEqualToString:@"Informações"]) {
+        NSString *phoneNumber = [@"tel://" stringByAppendingString:cell.detailTextLabel.text];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
     }
 }
 
