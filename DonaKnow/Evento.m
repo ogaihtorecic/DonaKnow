@@ -67,7 +67,8 @@
     
     NSString *param = nil;
     NSRange start = [mapaString rangeOfString:@"q="];
-    if (start.location != NSNotFound)
+    
+    if (start.location != NSNotFound && start.location != 0)
     {
         param = [mapaString substringFromIndex:start.location + start.length];
         NSRange end = [param rangeOfString:@"&"];
@@ -75,9 +76,11 @@
         {
             param = [param substringToIndex:end.location];
             NSArray *array = [param componentsSeparatedByString:@","];
+            if (array.count > 1) {
+                evento.latitude = [[array objectAtIndex:0] doubleValue];
+                evento.longitude = [[array objectAtIndex:1] doubleValue];
+            }
             
-            evento.latitude = [[array objectAtIndex:0] doubleValue];
-            evento.longitude = [[array objectAtIndex:1] doubleValue];
         }
 
     }
