@@ -19,6 +19,9 @@
 
 #pragma mark - Managing the detail item
 
+NSMutableArray *keys;
+NSMutableArray *values;
+
 - (void)setEvento:(Evento *) newEvento
 {
     if (_evento != newEvento) {
@@ -35,37 +38,85 @@
     Evento *theEvento = self.evento;
     
     if (theEvento) {
-        self.nomeEventoLabel.text = theEvento.nome;
-        self.nomeEventoLabel.numberOfLines = 2;
+        keys = [[NSMutableArray alloc] init];
+        values = [[NSMutableArray alloc] init];
         
-        self.localLabel.text = theEvento.local;
-        self.localLabel.numberOfLines = 2;
-
-        self.enderecoLabel.text = theEvento.endereco;
-        self.enderecoLabel.numberOfLines = 2;
+        if([theEvento.nome length] > 0) {
+            [keys addObject:@"Nome"];
+            [values addObject:theEvento.nome];
+        }
         
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:@"dd/MM/yyyy 'às' HH:mm"];
+        if([theEvento.local length] > 0) {
+            [keys addObject:@"Local"];
+            [values addObject:theEvento.local];
+        }
         
-        self.dataLabel.text = [formatter stringFromDate:theEvento.data];
+        if([theEvento.endereco length] > 0) {
+            [keys addObject:@"Endereço"];
+            [values addObject:theEvento.endereco];
+        }
         
-        self.atracoesLabel.text = theEvento.atracoes;
-        self.atracoesLabel.numberOfLines = 2;
+        if(theEvento.data) {
+            [keys addObject:@"Data"];
+            
+            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+            [formatter setDateFormat:@"dd/MM/yyyy 'às' HH:mm"];
+            [values addObject:[formatter stringFromDate:theEvento.data]];
+        }
         
-        self.informacoesLabel.text = theEvento.informacoes;
-        self.informacoesLabel.numberOfLines = 2;
+        if([theEvento.atracoes length] > 0) {
+            [keys addObject:@"Atrações"];
+            [values addObject:theEvento.atracoes];
+        }
         
-        self.valorLabel.text = theEvento.valor;
+        if([theEvento.informacoes length] > 0) {
+            [keys addObject:@"Informações"];
+            [values addObject:theEvento.informacoes];
+        }
         
-        self.observacoesLabel.text = theEvento.observacoes;
-        self.observacoesLabel.numberOfLines = 2;
+        if([theEvento.valor length] > 0) {
+            [keys addObject:@"Valor"];
+            [values addObject:theEvento.valor];
+        }
+        
+        if([theEvento.observacoes length] > 0) {
+            [keys addObject:@"Observações"];
+            [values addObject:theEvento.observacoes];
+        }
     }
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [keys count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    static NSString *CellIdentifier = @"DetalheCell";
+    UITableViewCell *cell;
+    
+    cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    cell.textLabel.text = [keys objectAtIndex:indexPath.row];
+    cell.detailTextLabel.text = [values objectAtIndex:indexPath.row];
+    
+    if([cell.textLabel.text isEqualToString:@"Endereço"] && self.evento.latitude != 0.000000 && self.evento.longitude != 0.000000) {
+        cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+    }
+    
+    return cell;
 }
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
-    if([cell.reuseIdentifier isEqualToString:@"EnderecoCell"]) {
+    if([cell.textLabel.text isEqualToString:@"Endereço"]) {
         Evento *theEvento = self.evento;
         if(theEvento.latitude != 0.000000 && theEvento.longitude != 0.000000) {
             Class mapItemClass = [MKMapItem class];
