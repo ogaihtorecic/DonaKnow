@@ -42,47 +42,57 @@
 
     NSArray *termsArray = [dictionary objectForKey:@"terms"];
     
-    NSDictionary *term = [termsArray objectAtIndex:0];
-    [evento setLocal: [term objectForKey:@"title"]];
-    [evento setEndereco: [term objectForKey:@"description"]];
+    if (termsArray.count > 0) {
+        NSDictionary *term = [termsArray objectAtIndex:0];
+        [evento setLocal: [term objectForKey:@"title"]];
+        [evento setEndereco: [term objectForKey:@"description"]];
+        
+        NSString *mapaString = [[term objectForKey:@"custom_fields"] objectForKey:@"mapa_do_local"];
+        
+        NSString *param = nil;
+        NSRange start = [mapaString rangeOfString:@"q="];
+        
+        if (start.location != NSNotFound && start.location != 0)
+        {
+            param = [mapaString substringFromIndex:start.location + start.length];
+            NSRange end = [param rangeOfString:@"&"];
+            if (end.location != NSNotFound)
+            {
+                param = [param substringToIndex:end.location];
+                NSArray *array = [param componentsSeparatedByString:@","];
+                if (array.count > 1) {
+                    evento.latitude = [[array objectAtIndex:0] doubleValue];
+                    evento.longitude = [[array objectAtIndex:1] doubleValue];
+                }
+                
+            }
+            
+        }
+    }
     
     NSDictionary *customFields = [dictionary objectForKey:@"custom_fields"];
     
     NSArray *atracoesArray = [customFields objectForKey:@"bandas"];
-    [evento setAtracoes: [atracoesArray objectAtIndex:0]];
+    if (atracoesArray.count > 0) {
+        [evento setAtracoes: [atracoesArray objectAtIndex:0]];
+    }
     
     NSArray *informacoesArray = [customFields objectForKey:@"informacoes"];
-    NSString *informacoes = [informacoesArray objectAtIndex:0];
-    informacoes = [informacoes stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-    informacoes = [informacoes stringByReplacingOccurrencesOfString:@" " withString:@"-"];
-    [evento setInformacoes: informacoes];
+    if (informacoesArray.count > 0) {
+        NSString *informacoes = [informacoesArray objectAtIndex:0];
+        informacoes = [informacoes stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        informacoes = [informacoes stringByReplacingOccurrencesOfString:@" " withString:@"-"];
+        [evento setInformacoes: informacoes];
+    }
     
     NSArray *valorArray = [customFields objectForKey:@"quanto"];
-    [evento setValor: [valorArray objectAtIndex:0]];
+    if (valorArray.count > 0) {
+        [evento setValor: [valorArray objectAtIndex:0]];
+    }
     
     NSArray *observacaoArray = [customFields objectForKey:@"observacao"];
-    [evento setObservacoes: [observacaoArray objectAtIndex:0]];
-    
-    NSString *mapaString = [[term objectForKey:@"custom_fields"] objectForKey:@"mapa_do_local"];
-    
-    NSString *param = nil;
-    NSRange start = [mapaString rangeOfString:@"q="];
-    
-    if (start.location != NSNotFound && start.location != 0)
-    {
-        param = [mapaString substringFromIndex:start.location + start.length];
-        NSRange end = [param rangeOfString:@"&"];
-        if (end.location != NSNotFound)
-        {
-            param = [param substringToIndex:end.location];
-            NSArray *array = [param componentsSeparatedByString:@","];
-            if (array.count > 1) {
-                evento.latitude = [[array objectAtIndex:0] doubleValue];
-                evento.longitude = [[array objectAtIndex:1] doubleValue];
-            }
-            
-        }
-
+    if (observacaoArray.count > 0) {
+        [evento setObservacoes: [observacaoArray objectAtIndex:0]];
     }
     
     return evento;
