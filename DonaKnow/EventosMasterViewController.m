@@ -58,7 +58,7 @@ BOOL loadDataRunning = false;
 - (void) loadDataWithOperation {
     [self performSelectorOnMainThread:@selector(showWaitMessage) withObject:nil waitUntilDone:YES];
     
-    NSString *url = [NSString stringWithFormat:@"http://dk.aondefui.com/?json=1&custom_fields=quanto,bandas,observacao,informacoes&taxonomy=local&taxonomy_fields=cidade,mapa_do_local"];
+    NSString *url = [NSString stringWithFormat:@"http://dk.aondefui.com/?count=100&json=1&custom_fields=quanto,bandas,observacao,informacoes&taxonomy=local&taxonomy_fields=cidade,mapa_do_local"];
     NSData *jsonData = [NSData dataWithContentsOfURL: [NSURL URLWithString:url]];
     
     [self.dataController reloadWithData:jsonData];

@@ -59,14 +59,13 @@
             if (end.location != NSNotFound)
             {
                 param = [param substringToIndex:end.location];
-                NSArray *array = [param componentsSeparatedByString:@","];
-                if (array.count > 1) {
-                    evento.latitude = [[array objectAtIndex:0] doubleValue];
-                    evento.longitude = [[array objectAtIndex:1] doubleValue];
-                }
                 
             }
-            
+            NSArray *array = [param componentsSeparatedByString:@","];
+            if (array.count > 1) {
+                evento.latitude = [[array objectAtIndex:0] doubleValue];
+                evento.longitude = [[array objectAtIndex:1] doubleValue];
+            }
         }
     }
     
