@@ -64,7 +64,7 @@ NSMutableArray *values;
             [keys addObject:@"Data"];
             
             NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-            [formatter setDateFormat:@"dd/MM/yyyy 'às' HH:mm"];
+            [formatter setDateFormat:@"E, dd/MM/yyyy 'às' HH:mm"];
             [values addObject:[formatter stringFromDate:theEvento.data]];
         }
         
