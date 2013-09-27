@@ -20,6 +20,7 @@
 @synthesize evento;
 @synthesize imageView;
 
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -33,6 +34,20 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    UITapGestureRecognizer *tapOnce = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(tapOnce:)];
+    
+    tapOnce.numberOfTapsRequired = 1;
+    
+    [self.imageView addGestureRecognizer:tapOnce];
+    [self.imageView setUserInteractionEnabled:YES];
+    
+    [self setNeedsStatusBarAppearanceUpdate];
+    self.modalPresentationCapturesStatusBarAppearance = YES;
+    
+}
+
+-(BOOL)prefersStatusBarHidden {
+    return YES;
 }
 
 - (void) loadView {
@@ -43,6 +58,24 @@
     
     [imageView setImageWithURL:[NSURL URLWithString:evento.posterGrande] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     self.view = imageView;
+}
+
+- (void)tapOnce:(UIGestureRecognizer *)gesture
+{
+    if([self.navigationController isNavigationBarHidden]) {
+        [self.navigationController setNavigationBarHidden:NO animated:YES];
+        [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
+        [self.tabBarController.tabBar setHidden:NO];
+        
+        imageView.backgroundColor = [UIColor whiteColor];
+        
+    } else {
+        [self.navigationController setNavigationBarHidden:YES animated:YES];
+        [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+        [self.tabBarController.tabBar setHidden:YES];
+        
+        imageView.backgroundColor = [UIColor blackColor];
+    }
 }
 
 - (void)didReceiveMemoryWarning
