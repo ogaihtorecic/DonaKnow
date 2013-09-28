@@ -112,7 +112,7 @@ NSMutableArray *values;
     
     if(([cell.textLabel.text isEqualToString:@"Endereço"] && self.evento.latitude != 0.000000 && self.evento.longitude != 0.000000) ||
         [cell.textLabel.text isEqualToString:@"Informações"]) {
-        cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+        cell.accessoryType = UITableViewCellAccessoryDetailButton;
     }
     
     return cell;
