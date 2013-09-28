@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AF05F96A17E6B17F0045D778 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF05F96917E6B17F0045D778 /* SDWebImage.framework */; };
 		AF05F96C17E6B1C00045D778 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF05F96B17E6B1C00045D778 /* ImageIO.framework */; };
+		AF1E4EDB17F7738B00E4AF7A /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1E4EDA17F7738B00E4AF7A /* Social.framework */; };
 		AFA0739A17EA878700EB7728 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AFA0739917EA878700EB7728 /* MBProgressHUD.m */; };
 		AFCBE41F17EEB57A00FBC0C3 /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCBE41E17EEB57A00FBC0C3 /* PhotoViewController.m */; };
 		AFE2CB3917E8080A00F229B2 /* EventosDiaDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE2CB3817E8080A00F229B2 /* EventosDiaDataController.m */; };
@@ -57,6 +58,7 @@
 /* Begin PBXFileReference section */
 		AF05F96917E6B17F0045D778 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = DonaKnow/SDWebImage.framework; sourceTree = "<group>"; };
 		AF05F96B17E6B1C00045D778 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		AF1E4EDA17F7738B00E4AF7A /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		AFA0739817EA878700EB7728 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		AFA0739917EA878700EB7728 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		AFCBE41D17EEB57A00FBC0C3 /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF1E4EDB17F7738B00E4AF7A /* Social.framework in Frameworks */,
 				AFEF025B17EE444900775CDD /* CoreLocation.framework in Frameworks */,
 				AFEF025917EE432700775CDD /* MapKit.framework in Frameworks */,
 				AF05F96C17E6B1C00045D778 /* ImageIO.framework in Frameworks */,
@@ -195,6 +198,7 @@
 		AFF879AF17E138CC001C0BE7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AF1E4EDA17F7738B00E4AF7A /* Social.framework */,
 				AF05F96B17E6B1C00045D778 /* ImageIO.framework */,
 				AFEF025A17EE444900775CDD /* CoreLocation.framework */,
 				AFEF025817EE432700775CDD /* MapKit.framework */,

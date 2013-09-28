@@ -13,6 +13,7 @@
 + (Evento *) withDictionary: (NSDictionary *) dictionary {
     Evento * evento = [[Evento alloc] init];
     [evento setNome: [dictionary objectForKey:@"title"]];
+    [evento setUrl:[dictionary objectForKey:@"url"]];
     
     NSDateFormatter *stringFormatter = [[NSDateFormatter alloc] init];
     [stringFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
@@ -33,11 +34,8 @@
         NSString *thumbnail = [[[attachment objectForKey:@"images"] objectForKey:@"small"] objectForKey:@"url"];
         [evento setThumbnail: thumbnail];
         
-        NSString *poster = [[[attachment objectForKey:@"images"] objectForKey:@"post-thumbnail"] objectForKey:@"url"];
-        [evento setPoster: poster];
-        
-        NSString *posterGrande = [[[attachment objectForKey:@"images"] objectForKey:@"full"] objectForKey:@"url"];
-        [evento setPosterGrande: posterGrande];
+        NSString *imagem = [[[attachment objectForKey:@"images"] objectForKey:@"full"] objectForKey:@"url"];
+        [evento setImagem: imagem];
     }
 
     NSArray *termsArray = [dictionary objectForKey:@"terms"];

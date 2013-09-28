@@ -11,6 +11,7 @@
 #import "PhotoViewController.h"
 
 #import <SDWebImage/UIImageView+WebCache.h>
+#import <Social/Social.h>
 
 @interface EventoDetailViewController ()
 
@@ -48,7 +49,9 @@ NSMutableArray *values;
         self.localLabel.text = theEvento.local;
         self.localLabel.numberOfLines = 2;
         
-        [self.imagemEvento setImageWithURL:[NSURL URLWithString:theEvento.poster] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+        [self.imagemEvento setImageWithURL:[NSURL URLWithString:theEvento.imagem] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+        self.imagemEvento.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+        self.imagemEvento.contentMode = UIViewContentModeScaleAspectFit;
         
         UITapGestureRecognizer *tapOnce = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(tapOnce:)];
         
@@ -169,15 +172,24 @@ NSMutableArray *values;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.navigationItem.rightBarButtonItem.target = self;
+    self.navigationItem.rightBarButtonItem.action = @selector(shareEvento);
+    
     [self configureView];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"ShowPhoto"]) {
+- (void)shareEvento {
+    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
         
-        PhotoViewController *photoController = [segue destinationViewController];
-        photoController.evento = self.evento;
+        SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        
+        [controller setInitialText:self.evento.nome];
+        [controller addURL:[NSURL URLWithString:self.evento.url]];
+        [controller addImage:self.imagemEvento.image];
+        
+        [self presentViewController:controller animated:YES completion:Nil];
+        
     }
 }
 

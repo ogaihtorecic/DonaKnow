@@ -18,10 +18,10 @@
 @property (nonatomic, copy) NSString *informacoes;
 @property (nonatomic, copy) NSString *valor;
 @property (nonatomic, copy) NSString *observacoes;
+@property (nonatomic, copy) NSString *url;
 
 @property (nonatomic, copy) NSString *thumbnail;
-@property (nonatomic, copy) NSString *poster;
-@property (nonatomic, copy) NSString *posterGrande;
+@property (nonatomic, copy) NSString *imagem;
 
 @property (nonatomic, copy) NSMutableArray *categorias;
 

@@ -153,7 +153,9 @@
                             <outlet property="delegate" destination="DIW-f7-VgU" id="iNv-hB-bae"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Wlp-NK-sYG"/>
+                    <navigationItem key="navigationItem" id="Wlp-NK-sYG">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="u3H-Of-FCh"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="imagemEvento" destination="TM2-k3-BQJ" id="lek-ru-D0p"/>
                         <outlet property="localLabel" destination="Mkd-CO-VIF" id="5GI-w5-F1a"/>
