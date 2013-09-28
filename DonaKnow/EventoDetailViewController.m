@@ -50,7 +50,12 @@ NSMutableArray *values;
         
         [self.imagemEvento setImageWithURL:[NSURL URLWithString:theEvento.poster] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
         
-        //[self.imagemEventoButton setImage:self.imagemEvento.image forState:UIControlStateNormal];
+        UITapGestureRecognizer *tapOnce = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(tapOnce:)];
+        
+        tapOnce.numberOfTapsRequired = 1;
+        
+        [self.imagemEvento addGestureRecognizer:tapOnce];
+        [self.imagemEvento setUserInteractionEnabled:YES];
         
         keys = [[NSMutableArray alloc] init];
         values = [[NSMutableArray alloc] init];
@@ -88,6 +93,16 @@ NSMutableArray *values;
             [values addObject:theEvento.observacoes];
         }
     }
+}
+
+- (void)tapOnce:(UIGestureRecognizer *)gesture
+{
+    PhotoViewController *viewController = [[PhotoViewController alloc] init];
+    viewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    viewController.modalPresentationStyle = UIModalPresentationFullScreen;
+    viewController.evento = self.evento;
+    
+    [self presentViewController:viewController animated:YES completion:nil];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

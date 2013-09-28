@@ -62,20 +62,7 @@
 
 - (void)tapOnce:(UIGestureRecognizer *)gesture
 {
-    if([self.navigationController isNavigationBarHidden]) {
-        [self.navigationController setNavigationBarHidden:NO animated:YES];
-        [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
-        [self.tabBarController.tabBar setHidden:NO];
-        
-        imageView.backgroundColor = [UIColor whiteColor];
-        
-    } else {
-        [self.navigationController setNavigationBarHidden:YES animated:YES];
-        [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
-        [self.tabBarController.tabBar setHidden:YES];
-        
-        imageView.backgroundColor = [UIColor blackColor];
-    }
+    [self dismissViewControllerAnimated:TRUE completion:nil];
 }
 
 - (void)didReceiveMemoryWarning
