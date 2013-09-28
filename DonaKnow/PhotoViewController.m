@@ -54,7 +54,7 @@
     imageView = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
     imageView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     imageView.contentMode = UIViewContentModeScaleAspectFit;
-    imageView.backgroundColor = [UIColor whiteColor];
+    imageView.backgroundColor = [UIColor blackColor];
     
     [imageView setImageWithURL:[NSURL URLWithString:evento.posterGrande] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     self.view = imageView;

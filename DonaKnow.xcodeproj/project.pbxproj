@@ -176,7 +176,6 @@
 		AFF879A417E138CC001C0BE7 = {
 			isa = PBXGroup;
 			children = (
-				AF05F96B17E6B1C00045D778 /* ImageIO.framework */,
 				AFF879B617E138CC001C0BE7 /* DonaKnow */,
 				AFF879E517E138CC001C0BE7 /* DonaKnowTests */,
 				AFF879AF17E138CC001C0BE7 /* Frameworks */,
@@ -196,6 +195,7 @@
 		AFF879AF17E138CC001C0BE7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AF05F96B17E6B1C00045D778 /* ImageIO.framework */,
 				AFEF025A17EE444900775CDD /* CoreLocation.framework */,
 				AFEF025817EE432700775CDD /* MapKit.framework */,
 				AF05F96917E6B17F0045D778 /* SDWebImage.framework */,
