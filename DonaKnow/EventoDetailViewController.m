@@ -189,28 +189,24 @@ NSMutableArray *values;
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     NSString *choice = [actionSheet buttonTitleAtIndex:buttonIndex];
     if([choice isEqualToString:@"Twitter"]) {
-        if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
             
-            SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-            
-            [controller setInitialText:self.evento.nome];
-            [controller addURL:[NSURL URLWithString:self.evento.url]];
-            
-            [self presentViewController:controller animated:YES completion:Nil];
-            
-        }
+        SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        
+        [controller setInitialText:self.evento.nome];
+        [controller addURL:[NSURL URLWithString:self.evento.url]];
+        
+        [self presentViewController:controller animated:YES completion:Nil];
+        
     } else if ([choice isEqualToString:@"Facebook"]) {
-        if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
-            
-            SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-            
-            [controller setInitialText:self.evento.nome];
-            [controller addURL:[NSURL URLWithString:self.evento.url]];
-            [controller addImage:self.imagemEvento.image];
-            
-            [self presentViewController:controller animated:YES completion:Nil];
-            
-        }
+        
+        SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        
+        [controller setInitialText:self.evento.nome];
+        [controller addURL:[NSURL URLWithString:self.evento.url]];
+        [controller addImage:self.imagemEvento.image];
+        
+        [self presentViewController:controller animated:YES completion:Nil];
+        
     }
 }
 

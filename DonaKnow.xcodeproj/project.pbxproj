@@ -25,6 +25,9 @@
 		AFE954CF17E4241000D28E13 /* EventoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE954CE17E4241000D28E13 /* EventoDetailViewController.m */; };
 		AFEF025917EE432700775CDD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFEF025817EE432700775CDD /* MapKit.framework */; };
 		AFEF025B17EE444900775CDD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFEF025A17EE444900775CDD /* CoreLocation.framework */; };
+		AFF62C3D17FB83FD00D56E00 /* Destaques.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF62C3A17FB83FD00D56E00 /* Destaques.png */; };
+		AFF62C3E17FB83FD00D56E00 /* EventosDia.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF62C3B17FB83FD00D56E00 /* EventosDia.png */; };
+		AFF62C3F17FB83FD00D56E00 /* Gratis.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF62C3C17FB83FD00D56E00 /* Gratis.png */; };
 		AFF879B117E138CC001C0BE7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFF879B017E138CC001C0BE7 /* UIKit.framework */; };
 		AFF879B317E138CC001C0BE7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFF879B217E138CC001C0BE7 /* Foundation.framework */; };
 		AFF879B517E138CC001C0BE7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFF879B417E138CC001C0BE7 /* CoreGraphics.framework */; };
@@ -40,9 +43,6 @@
 		AFF879E217E138CC001C0BE7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFF879B217E138CC001C0BE7 /* Foundation.framework */; };
 		AFF879EA17E138CC001C0BE7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AFF879E817E138CC001C0BE7 /* InfoPlist.strings */; };
 		AFF879ED17E138CC001C0BE7 /* DonaKnowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF879EC17E138CC001C0BE7 /* DonaKnowTests.m */; };
-		AFF879F817E139A1001C0BE7 /* 88-beer-mug.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF879F617E139A1001C0BE7 /* 88-beer-mug.png */; };
-		AFF879F917E139A1001C0BE7 /* 172-pricetag.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF879F717E139A1001C0BE7 /* 172-pricetag.png */; };
-		AFF879FB17E139D8001C0BE7 /* 28-star.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF879FA17E139D8001C0BE7 /* 28-star.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +86,9 @@
 		AFE954CE17E4241000D28E13 /* EventoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventoDetailViewController.m; sourceTree = "<group>"; };
 		AFEF025817EE432700775CDD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		AFEF025A17EE444900775CDD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		AFF62C3A17FB83FD00D56E00 /* Destaques.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Destaques.png; sourceTree = "<group>"; };
+		AFF62C3B17FB83FD00D56E00 /* EventosDia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EventosDia.png; sourceTree = "<group>"; };
+		AFF62C3C17FB83FD00D56E00 /* Gratis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gratis.png; sourceTree = "<group>"; };
 		AFF879AD17E138CC001C0BE7 /* DonaKnow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DonaKnow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFF879B017E138CC001C0BE7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AFF879B217E138CC001C0BE7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -106,9 +109,6 @@
 		AFF879E917E138CC001C0BE7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AFF879EB17E138CC001C0BE7 /* DonaKnowTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DonaKnowTests.h; sourceTree = "<group>"; };
 		AFF879EC17E138CC001C0BE7 /* DonaKnowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DonaKnowTests.m; sourceTree = "<group>"; };
-		AFF879F617E139A1001C0BE7 /* 88-beer-mug.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "88-beer-mug.png"; sourceTree = "<group>"; };
-		AFF879F717E139A1001C0BE7 /* 172-pricetag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "172-pricetag.png"; sourceTree = "<group>"; };
-		AFF879FA17E139D8001C0BE7 /* 28-star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "28-star.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,9 +230,6 @@
 				AFA0739817EA878700EB7728 /* MBProgressHUD.h */,
 				AFA0739917EA878700EB7728 /* MBProgressHUD.m */,
 				AFE72C7217E7BAED000C2391 /* placeholder.png */,
-				AFF879FA17E139D8001C0BE7 /* 28-star.png */,
-				AFF879F617E139A1001C0BE7 /* 88-beer-mug.png */,
-				AFF879F717E139A1001C0BE7 /* 172-pricetag.png */,
 				AFF879B817E138CC001C0BE7 /* DonaKnow-Info.plist */,
 				AFF879B917E138CC001C0BE7 /* InfoPlist.strings */,
 				AFF879BC17E138CC001C0BE7 /* main.m */,
@@ -240,6 +237,9 @@
 				AFF879C217E138CC001C0BE7 /* Default.png */,
 				AFF879C417E138CC001C0BE7 /* Default@2x.png */,
 				AFF879C617E138CC001C0BE7 /* Default-568h@2x.png */,
+				AFF62C3A17FB83FD00D56E00 /* Destaques.png */,
+				AFF62C3B17FB83FD00D56E00 /* EventosDia.png */,
+				AFF62C3C17FB83FD00D56E00 /* Gratis.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -343,11 +343,11 @@
 				AFF879BB17E138CC001C0BE7 /* InfoPlist.strings in Resources */,
 				AFF879C317E138CC001C0BE7 /* Default.png in Resources */,
 				AFF879C517E138CC001C0BE7 /* Default@2x.png in Resources */,
+				AFF62C3F17FB83FD00D56E00 /* Gratis.png in Resources */,
 				AFF879C717E138CC001C0BE7 /* Default-568h@2x.png in Resources */,
 				AFF879CA17E138CC001C0BE7 /* MainStoryboard.storyboard in Resources */,
-				AFF879F817E139A1001C0BE7 /* 88-beer-mug.png in Resources */,
-				AFF879F917E139A1001C0BE7 /* 172-pricetag.png in Resources */,
-				AFF879FB17E139D8001C0BE7 /* 28-star.png in Resources */,
+				AFF62C3D17FB83FD00D56E00 /* Destaques.png in Resources */,
+				AFF62C3E17FB83FD00D56E00 /* EventosDia.png in Resources */,
 				AFE72C7317E7BAED000C2391 /* placeholder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

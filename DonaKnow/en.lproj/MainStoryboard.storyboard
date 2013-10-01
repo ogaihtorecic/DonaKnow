@@ -213,7 +213,7 @@
         <scene sceneID="gMQ-pZ-y76">
             <objects>
                 <navigationController definesPresentationContext="YES" id="i6C-S6-f4A" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Destaques" image="28-star.png" id="ZUt-p0-RVn"/>
+                    <tabBarItem key="tabBarItem" title="Destaques" image="Destaques.png" id="ZUt-p0-RVn"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ucT-El-ZhR">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -272,7 +272,7 @@
         <scene sceneID="P0h-5B-rvg">
             <objects>
                 <navigationController definesPresentationContext="YES" id="d5K-jd-957" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Grátis" image="172-pricetag.png" id="DK6-fb-7Fd"/>
+                    <tabBarItem key="tabBarItem" title="Grátis" image="Gratis.png" id="DK6-fb-7Fd"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fNp-K8-xsO">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -288,7 +288,7 @@
         <scene sceneID="DW2-Ic-z19">
             <objects>
                 <navigationController definesPresentationContext="YES" id="qL3-65-0Ic" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Eventos do Dia" image="88-beer-mug.png" id="XYp-YV-CJ3"/>
+                    <tabBarItem key="tabBarItem" title="Eventos do Dia" image="EventosDia.png" id="XYp-YV-CJ3"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rqa-xp-e82">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -302,9 +302,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="172-pricetag.png" width="28" height="23"/>
-        <image name="28-star.png" width="26" height="26"/>
-        <image name="88-beer-mug.png" width="22" height="27"/>
+        <image name="Destaques.png" width="30" height="28"/>
+        <image name="EventosDia.png" width="30" height="30"/>
+        <image name="Gratis.png" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
