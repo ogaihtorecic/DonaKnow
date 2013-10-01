@@ -19,7 +19,7 @@
     [stringFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     NSDate *date = [stringFormatter dateFromString:[dictionary objectForKey:@"date"]];
     [evento setData: date];
-    
+
     NSArray *categoriesArray = [dictionary objectForKey:@"categories"];
     NSMutableArray *categorias = [[NSMutableArray alloc] init];
     for (NSDictionary *categoria in categoriesArray) {
@@ -45,24 +45,30 @@
         [evento setLocal: [term objectForKey:@"title"]];
         [evento setEndereco: [term objectForKey:@"description"]];
         
-        NSString *mapaString = [[term objectForKey:@"custom_fields"] objectForKey:@"mapa_do_local"];
         
-        NSString *param = nil;
-        NSRange start = [mapaString rangeOfString:@"q="];
         
-        if (start.location != NSNotFound && start.location != 0)
-        {
-            param = [mapaString substringFromIndex:start.location + start.length];
-            NSRange end = [param rangeOfString:@"&"];
-            if (end.location != NSNotFound)
-            {
-                param = [param substringToIndex:end.location];
+        id checkField = [term objectForKey:@"custom_fields"];
+        if([checkField isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *customField = (NSDictionary *)checkField;
+            NSString *mapaString = [customField objectForKey:@"mapa_do_local"];
+            if (mapaString != nil) {
+                NSRange start = [mapaString rangeOfString:@"q="];
                 
-            }
-            NSArray *array = [param componentsSeparatedByString:@","];
-            if (array.count > 1) {
-                evento.latitude = [[array objectAtIndex:0] doubleValue];
-                evento.longitude = [[array objectAtIndex:1] doubleValue];
+                if (start.location != NSNotFound && start.location != 0)
+                {
+                    NSString *param = [mapaString substringFromIndex:start.location + start.length];
+                    NSRange end = [param rangeOfString:@"&"];
+                    if (end.location != NSNotFound)
+                    {
+                        param = [param substringToIndex:end.location];
+                        
+                    }
+                    NSArray *array = [param componentsSeparatedByString:@","];
+                    if (array.count > 1) {
+                        evento.latitude = [[array objectAtIndex:0] doubleValue];
+                        evento.longitude = [[array objectAtIndex:1] doubleValue];
+                    }
+                }
             }
         }
     }
