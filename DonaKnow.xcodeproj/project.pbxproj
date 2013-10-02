@@ -25,6 +25,9 @@
 		AFE954CF17E4241000D28E13 /* EventoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE954CE17E4241000D28E13 /* EventoDetailViewController.m */; };
 		AFEF025917EE432700775CDD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFEF025817EE432700775CDD /* MapKit.framework */; };
 		AFEF025B17EE444900775CDD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFEF025A17EE444900775CDD /* CoreLocation.framework */; };
+		AFEF2F2617FC876C00A5A74B /* Destaques@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFEF2F2317FC876C00A5A74B /* Destaques@2x.png */; };
+		AFEF2F2717FC876C00A5A74B /* EventosDia@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFEF2F2417FC876C00A5A74B /* EventosDia@2x.png */; };
+		AFEF2F2817FC876C00A5A74B /* Gratis@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFEF2F2517FC876C00A5A74B /* Gratis@2x.png */; };
 		AFF62C3D17FB83FD00D56E00 /* Destaques.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF62C3A17FB83FD00D56E00 /* Destaques.png */; };
 		AFF62C3E17FB83FD00D56E00 /* EventosDia.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF62C3B17FB83FD00D56E00 /* EventosDia.png */; };
 		AFF62C3F17FB83FD00D56E00 /* Gratis.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF62C3C17FB83FD00D56E00 /* Gratis.png */; };
@@ -86,6 +89,9 @@
 		AFE954CE17E4241000D28E13 /* EventoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventoDetailViewController.m; sourceTree = "<group>"; };
 		AFEF025817EE432700775CDD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		AFEF025A17EE444900775CDD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		AFEF2F2317FC876C00A5A74B /* Destaques@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Destaques@2x.png"; sourceTree = "<group>"; };
+		AFEF2F2417FC876C00A5A74B /* EventosDia@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EventosDia@2x.png"; sourceTree = "<group>"; };
+		AFEF2F2517FC876C00A5A74B /* Gratis@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gratis@2x.png"; sourceTree = "<group>"; };
 		AFF62C3A17FB83FD00D56E00 /* Destaques.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Destaques.png; sourceTree = "<group>"; };
 		AFF62C3B17FB83FD00D56E00 /* EventosDia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EventosDia.png; sourceTree = "<group>"; };
 		AFF62C3C17FB83FD00D56E00 /* Gratis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gratis.png; sourceTree = "<group>"; };
@@ -240,6 +246,9 @@
 				AFF62C3A17FB83FD00D56E00 /* Destaques.png */,
 				AFF62C3B17FB83FD00D56E00 /* EventosDia.png */,
 				AFF62C3C17FB83FD00D56E00 /* Gratis.png */,
+				AFEF2F2317FC876C00A5A74B /* Destaques@2x.png */,
+				AFEF2F2417FC876C00A5A74B /* EventosDia@2x.png */,
+				AFEF2F2517FC876C00A5A74B /* Gratis@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -344,8 +353,11 @@
 				AFF879C317E138CC001C0BE7 /* Default.png in Resources */,
 				AFF879C517E138CC001C0BE7 /* Default@2x.png in Resources */,
 				AFF62C3F17FB83FD00D56E00 /* Gratis.png in Resources */,
+				AFEF2F2817FC876C00A5A74B /* Gratis@2x.png in Resources */,
 				AFF879C717E138CC001C0BE7 /* Default-568h@2x.png in Resources */,
 				AFF879CA17E138CC001C0BE7 /* MainStoryboard.storyboard in Resources */,
+				AFEF2F2617FC876C00A5A74B /* Destaques@2x.png in Resources */,
+				AFEF2F2717FC876C00A5A74B /* EventosDia@2x.png in Resources */,
 				AFF62C3D17FB83FD00D56E00 /* Destaques.png in Resources */,
 				AFF62C3E17FB83FD00D56E00 /* EventosDia.png in Resources */,
 				AFE72C7317E7BAED000C2391 /* placeholder.png in Resources */,
