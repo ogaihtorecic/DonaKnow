@@ -33,13 +33,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    UITapGestureRecognizer *tapOnce = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(tapOnce:)];
-    
-    tapOnce.numberOfTapsRequired = 1;
-    
-    [self.imageView addGestureRecognizer:tapOnce];
-    [self.imageView setUserInteractionEnabled:YES];
     
     [self setNeedsStatusBarAppearanceUpdate];
     self.modalPresentationCapturesStatusBarAppearance = YES;
@@ -57,10 +50,31 @@
     imageView.backgroundColor = [UIColor blackColor];
     
     [imageView setImageWithURL:[NSURL URLWithString:evento.imagem] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+    [imageView setUserInteractionEnabled:TRUE];
+    
     self.view = imageView;
+    
+    UIButton *closeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [closeButton addTarget:self action:@selector(hidePhoto) forControlEvents:UIControlEventTouchUpInside];
+    [closeButton setTitle:@"Fechar" forState:UIControlStateNormal];
+    [closeButton.layer setBorderWidth:2.0f];
+    [closeButton.layer setBorderColor:[UIColor lightTextColor].CGColor];
+    closeButton.layer.masksToBounds = YES;
+    [closeButton.layer setCornerRadius:4.0f];
+    [closeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    closeButton.backgroundColor = [UIColor lightGrayColor];
+    
+    float buttonWidth = 70.0;
+    float buttonHeight = 30.0;
+    float buttonX = self.view.frame.size.width - buttonWidth - 10.0;
+    float buttonY = 20.0;
+    closeButton.frame = CGRectMake(buttonX, buttonY, buttonWidth, buttonHeight);
+    
+    [self.view addSubview:closeButton];
 }
 
-- (void)tapOnce:(UIGestureRecognizer *)gesture
+- (void)hidePhoto
 {
     [self dismissViewControllerAnimated:TRUE completion:nil];
 }
