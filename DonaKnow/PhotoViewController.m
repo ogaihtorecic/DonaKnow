@@ -10,6 +10,7 @@
 #import "Evento.h"
 
 #import <SDWebImage/UIImageView+WebCache.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface PhotoViewController ()
 
@@ -56,14 +57,12 @@
     
     UIButton *closeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [closeButton addTarget:self action:@selector(hidePhoto) forControlEvents:UIControlEventTouchUpInside];
-    [closeButton setTitle:@"Fechar" forState:UIControlStateNormal];
-    [closeButton.layer setBorderWidth:2.0f];
-    [closeButton.layer setBorderColor:[UIColor lightTextColor].CGColor];
-    closeButton.layer.masksToBounds = YES;
+    [closeButton setTitle:@"FECHAR" forState:UIControlStateNormal];
+    closeButton.titleLabel.font = [UIFont boldSystemFontOfSize:12.0];
+    
+    [closeButton.layer setBackgroundColor:[UIColor colorWithWhite:0.0 alpha:0.5].CGColor];
     [closeButton.layer setCornerRadius:4.0f];
     [closeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    
-    closeButton.backgroundColor = [UIColor lightGrayColor];
     
     float buttonWidth = 70.0;
     float buttonHeight = 30.0;
