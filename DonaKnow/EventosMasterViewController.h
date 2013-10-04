@@ -15,5 +15,6 @@
 @property (strong, nonatomic) EventoDataController *dataController;
 
 - (void) loadData;
+- (void) refreshButtonLoadData;
 
 @end

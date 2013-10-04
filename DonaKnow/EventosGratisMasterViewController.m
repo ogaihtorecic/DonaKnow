@@ -19,7 +19,6 @@
 {
     [super awakeFromNib];
     self.dataController = [[EventosGratisDataController alloc] init];
-    [self loadData];
 }
 
 - (void)viewDidLoad

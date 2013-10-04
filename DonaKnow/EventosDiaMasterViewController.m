@@ -19,7 +19,7 @@
 {
     [super awakeFromNib];
     self.dataController = [[EventosDiaDataController alloc] init];
-    [self loadData];
+    [self refreshButtonLoadData];
 }
 
 - (void)viewDidLoad
