@@ -192,7 +192,7 @@ NSMutableArray *values;
             
         SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
         
-        [controller setInitialText:self.evento.nome];
+        [controller setInitialText:self.shareText];
         [controller addURL:[NSURL URLWithString:self.evento.url]];
         
         [self presentViewController:controller animated:YES completion:Nil];
@@ -201,13 +201,21 @@ NSMutableArray *values;
         
         SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
         
-        [controller setInitialText:self.evento.nome];
+        [controller setInitialText:self.shareText];
         [controller addURL:[NSURL URLWithString:self.evento.url]];
         [controller addImage:self.imagemEvento.image];
         
         [self presentViewController:controller animated:YES completion:Nil];
         
     }
+}
+
+- (NSString *)shareText {
+    NSMutableString *text = [[NSMutableString alloc] init];
+    [text appendString:self.evento.nome];
+    [text appendString:@" @ "];
+    [text appendString:self.evento.local];
+    return text;
 }
 
 @end
