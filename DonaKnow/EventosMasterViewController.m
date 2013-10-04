@@ -12,12 +12,13 @@
 #import "EventoDataController.h"
 #import "Evento.h"
 #import "MBProgressHUD.h"
+#import "Reachability.h"
 
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface EventosMasterViewController ()
 
-- (void) loadDataWithOperation;
+- (void) loadDataOperationWithMessage:(id)showMessage;
 - (void) showWaitMessage;
 - (void) dismissWaitMessage;
 
@@ -26,6 +27,7 @@
 @implementation EventosMasterViewController
 
 BOOL loadDataRunning = false;
+UIAlertView *noInternetAlert;
 
 - (void)viewDidLoad
 {
@@ -34,37 +36,49 @@ BOOL loadDataRunning = false;
     self.navigationItem.rightBarButtonItem.action = @selector(refreshButtonLoadData);
     
     self.tabBarController.delegate = self;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:kReachabilityChangedNotification object:nil];
+    
+    noInternetAlert = [[UIAlertView alloc] initWithTitle:@"Sem Internet!" message:@"Verifique sua conexão e tente novamente" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
 }
 
 -(BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
     return !loadDataRunning;
 }
 
-- (void) loadData {
+- (void) loadDataWithMessage:(id)showMessage {
     NSOperationQueue *queue = [NSOperationQueue new];
-    
-    NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(loadDataWithOperation) object:nil];
+    NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(loadDataOperationWithMessage:) object:showMessage];
     
     [queue addOperation:operation];
     
 }
 
 - (void) refreshButtonLoadData {
-    [self loadData];
-    [[[[self.tabBarController.viewControllers objectAtIndex:1] viewControllers] objectAtIndex:0] loadData];
-    [[[[self.tabBarController.viewControllers objectAtIndex:2] viewControllers] objectAtIndex:0] loadData];
+    [self loadDataWithMessage:[NSNumber numberWithBool:YES]];
+    [[[[self.tabBarController.viewControllers objectAtIndex:1] viewControllers] objectAtIndex:0] loadDataWithMessage:[NSNumber numberWithBool:NO]];
+    [[[[self.tabBarController.viewControllers objectAtIndex:2] viewControllers] objectAtIndex:0] loadDataWithMessage:[NSNumber numberWithBool:NO]];
 }
 
-- (void) loadDataWithOperation {
+- (void) loadDataOperationWithMessage:(id)showMessage {
     [self performSelectorOnMainThread:@selector(showWaitMessage) withObject:nil waitUntilDone:YES];
     
-    NSString *url = [NSString stringWithFormat:@"http://dk.aondefui.com/?count=100&json=1&custom_fields=quanto,bandas,observacao,informacoes&taxonomy=local&taxonomy_fields=cidade,mapa_do_local"];
-    NSData *jsonData = [NSData dataWithContentsOfURL: [NSURL URLWithString:url]];
-    
-    [self.dataController reloadWithData:jsonData];
-    
-    [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
-    [self performSelectorOnMainThread:@selector(dismissWaitMessage) withObject:nil waitUntilDone:YES];
+    if(self.isThereConnection) {
+        NSString *url = [NSString stringWithFormat:@"http://dk.aondefui.com/?count=100&json=1&custom_fields=quanto,bandas,observacao,informacoes&taxonomy=local&taxonomy_fields=cidade,mapa_do_local"];
+        
+        NSData *jsonData = [NSData dataWithContentsOfURL: [NSURL URLWithString:url]];
+        [self.dataController reloadWithData:jsonData];
+        
+        [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
+        [self performSelectorOnMainThread:@selector(dismissWaitMessage) withObject:nil waitUntilDone:YES];
+        
+    } else {
+        [self performSelectorOnMainThread:@selector(dismissWaitMessage) withObject:nil waitUntilDone:YES];
+        
+        if ([showMessage boolValue]) {
+            [self performSelectorOnMainThread:@selector(showErrorMessage) withObject:nil waitUntilDone:YES];
+        }
+    }
 }
 
 - (void)showWaitMessage {
@@ -81,7 +95,16 @@ BOOL loadDataRunning = false;
     loadDataRunning = false;
 }
 
+- (void)showErrorMessage {
+    [noInternetAlert show];
+}
 
+-(BOOL)isThereConnection {
+    Reachability *internetReachability = [Reachability reachabilityForInternetConnection];
+    [internetReachability startNotifier];
+    
+    return internetReachability.currentReachabilityStatus != NotReachable;
+}
 
 - (void)didReceiveMemoryWarning
 {
