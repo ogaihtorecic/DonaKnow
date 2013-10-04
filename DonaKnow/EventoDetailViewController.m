@@ -9,6 +9,7 @@
 #import "EventoDetailViewController.h"
 #import "Evento.h"
 #import "PhotoViewController.h"
+#import "DetailTableCell.h"
 
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <Social/Social.h>
@@ -25,6 +26,13 @@
 
 NSMutableArray *keys;
 NSMutableArray *values;
+
+UITapGestureRecognizer *pinTap;
+UITapGestureRecognizer *calendarTap;
+UITapGestureRecognizer *phoneTap;
+
+UIAlertView *phoneAlert;
+UIAlertView *mapAlert;
 
 - (void)setEvento:(Evento *) newEvento
 {
@@ -53,11 +61,10 @@ NSMutableArray *values;
         self.imagemEvento.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         self.imagemEvento.contentMode = UIViewContentModeScaleAspectFit;
         
-        UITapGestureRecognizer *tapOnce = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(tapOnce:)];
+        UITapGestureRecognizer *imageTap = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(tapImage:)];
+        imageTap.numberOfTapsRequired = 1;
         
-        tapOnce.numberOfTapsRequired = 1;
-        
-        [self.imagemEvento addGestureRecognizer:tapOnce];
+        [self.imagemEvento addGestureRecognizer:imageTap];
         [self.imagemEvento setUserInteractionEnabled:YES];
         
         keys = [[NSMutableArray alloc] init];
@@ -95,10 +102,22 @@ NSMutableArray *values;
             [keys addObject:@"Observações"];
             [values addObject:theEvento.observacoes];
         }
+        
+        pinTap = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(tapPin:)];
+        pinTap.numberOfTapsRequired = 1;
+        
+        calendarTap = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(tapCalendar:)];
+        pinTap.numberOfTapsRequired = 1;
+        
+        phoneTap = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(tapPhone:)];
+        phoneTap.numberOfTapsRequired = 1;
+        
+        phoneAlert = [[UIAlertView alloc] initWithTitle:nil message:self.evento.informacoes delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Ligar", nil];
+        mapAlert = [[UIAlertView alloc] initWithTitle:nil message:@"Abrir Mapa?" delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"OK", nil];
     }
 }
 
-- (void)tapOnce:(UIGestureRecognizer *)gesture
+- (void)tapImage:(UIGestureRecognizer *)gesture
 {
     PhotoViewController *viewController = [[PhotoViewController alloc] init];
     viewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
@@ -108,38 +127,23 @@ NSMutableArray *values;
     [self presentViewController:viewController animated:YES completion:nil];
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+- (void)tapPin:(UIGestureRecognizer *)gesture {
+    [mapAlert show];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [keys count];
+- (void)tapCalendar:(UIGestureRecognizer *)gesture {
+    
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    static NSString *CellIdentifier = @"DetalheCell";
-    UITableViewCell *cell;
-    
-    cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
-    cell.textLabel.text = [keys objectAtIndex:indexPath.row];
-    cell.detailTextLabel.text = [values objectAtIndex:indexPath.row];
-    
-    if(([cell.textLabel.text isEqualToString:@"Endereço"] && self.evento.latitude != 0.000000 && self.evento.longitude != 0.000000) ||
-        [cell.textLabel.text isEqualToString:@"Informações"]) {
-        cell.accessoryType = UITableViewCellAccessoryDetailButton;
-    }
-    
-    return cell;
+- (void)tapPhone:(UIGestureRecognizer *)gesture {
+    [phoneAlert show];
 }
 
-- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    
-    if([cell.textLabel.text isEqualToString:@"Endereço"]) {
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if(alertView == phoneAlert && buttonIndex == 1) {
+        NSString *phoneNumber = [@"tel://" stringByAppendingString:self.evento.informacoes];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
+    } else if(alertView == mapAlert && buttonIndex == 1) {
         Evento *theEvento = self.evento;
         if(theEvento.latitude != 0.000000 && theEvento.longitude != 0.000000) {
             Class mapItemClass = [MKMapItem class];
@@ -159,14 +163,50 @@ NSMutableArray *values;
                 MKMapItem *currentLocationMapItem = [MKMapItem mapItemForCurrentLocation];
                 // Pass the current location and destination map items to the Maps app
                 // Set the direction mode in the launchOptions dictionary
-                [MKMapItem openMapsWithItems:@[currentLocationMapItem, mapItem] 
+                [MKMapItem openMapsWithItems:@[currentLocationMapItem, mapItem]
                                launchOptions:launchOptions];
             }
         }
-    } else if([cell.textLabel.text isEqualToString:@"Informações"]) {
-        NSString *phoneNumber = [@"tel://" stringByAppendingString:cell.detailTextLabel.text];
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
     }
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [keys count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    static NSString *tableIdentifier = @"DetailTableCell";
+    DetailTableCell *cell = (DetailTableCell *)[tableView dequeueReusableCellWithIdentifier:tableIdentifier];
+    if (cell == nil)
+    {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:tableIdentifier owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+    cell.titleLabel.text = [keys objectAtIndex:indexPath.row];
+    cell.detailLabel.text = [values objectAtIndex:indexPath.row];
+    
+    if(([cell.titleLabel.text isEqualToString:@"Endereço"] && self.evento.latitude != 0.000000 && self.evento.longitude != 0.000000)) {
+        cell.actionImageView.image = [UIImage imageNamed:@"Pin.png"];
+        [cell.actionImageView addGestureRecognizer:pinTap];
+    } else if([cell.titleLabel.text isEqualToString:@"Informações"]) {
+        cell.actionImageView.image = [UIImage imageNamed:@"Phone.png"];
+        [cell.actionImageView addGestureRecognizer:phoneTap];
+    } else if([cell.titleLabel.text isEqualToString:@"Data"]) {
+        cell.actionImageView.image = [UIImage imageNamed:@"Calendar.png"];
+        [cell.actionImageView addGestureRecognizer:calendarTap];
+    }
+    
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 50;
 }
 
 - (void)viewDidLoad

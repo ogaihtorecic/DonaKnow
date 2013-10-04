@@ -13,6 +13,14 @@
 		AF6F41A717FF44D100696B05 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AF6F41A617FF44D100696B05 /* Reachability.m */; };
 		AF6F41A917FF485800696B05 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF6F41A817FF485800696B05 /* SystemConfiguration.framework */; };
 		AFA0739A17EA878700EB7728 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AFA0739917EA878700EB7728 /* MBProgressHUD.m */; };
+		AFC6197917FF6243005708E4 /* DetailTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AFC6197817FF6243005708E4 /* DetailTableCell.m */; };
+		AFC6197B17FF6349005708E4 /* DetailTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFC6197A17FF6349005708E4 /* DetailTableCell.xib */; };
+		AFC6199217FF77D3005708E4 /* Phone.png in Resources */ = {isa = PBXBuildFile; fileRef = AFC6199017FF77D3005708E4 /* Phone.png */; };
+		AFC6199317FF77D3005708E4 /* Phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFC6199117FF77D3005708E4 /* Phone@2x.png */; };
+		AFC6199817FF78C6005708E4 /* Calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = AFC6199417FF78C6005708E4 /* Calendar.png */; };
+		AFC6199917FF78C6005708E4 /* Calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFC6199517FF78C6005708E4 /* Calendar@2x.png */; };
+		AFC6199A17FF78C6005708E4 /* Pin.png in Resources */ = {isa = PBXBuildFile; fileRef = AFC6199617FF78C6005708E4 /* Pin.png */; };
+		AFC6199B17FF78C6005708E4 /* Pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFC6199717FF78C6005708E4 /* Pin@2x.png */; };
 		AFCBE41F17EEB57A00FBC0C3 /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCBE41E17EEB57A00FBC0C3 /* PhotoViewController.m */; };
 		AFE2CB3917E8080A00F229B2 /* EventosDiaDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE2CB3817E8080A00F229B2 /* EventosDiaDataController.m */; };
 		AFE2CB3C17E80AFC00F229B2 /* EventosDiaMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE2CB3B17E80AFC00F229B2 /* EventosDiaMasterViewController.m */; };
@@ -69,6 +77,15 @@
 		AF6F41A817FF485800696B05 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		AFA0739817EA878700EB7728 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		AFA0739917EA878700EB7728 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		AFC6197717FF6243005708E4 /* DetailTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTableCell.h; sourceTree = "<group>"; };
+		AFC6197817FF6243005708E4 /* DetailTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTableCell.m; sourceTree = "<group>"; };
+		AFC6197A17FF6349005708E4 /* DetailTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailTableCell.xib; sourceTree = "<group>"; };
+		AFC6199017FF77D3005708E4 /* Phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Phone.png; sourceTree = "<group>"; };
+		AFC6199117FF77D3005708E4 /* Phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Phone@2x.png"; sourceTree = "<group>"; };
+		AFC6199417FF78C6005708E4 /* Calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Calendar.png; sourceTree = "<group>"; };
+		AFC6199517FF78C6005708E4 /* Calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Calendar@2x.png"; sourceTree = "<group>"; };
+		AFC6199617FF78C6005708E4 /* Pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pin.png; sourceTree = "<group>"; };
+		AFC6199717FF78C6005708E4 /* Pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pin@2x.png"; sourceTree = "<group>"; };
 		AFCBE41D17EEB57A00FBC0C3 /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
 		AFCBE41E17EEB57A00FBC0C3 /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
 		AFE2CB3717E8080A00F229B2 /* EventosDiaDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventosDiaDataController.h; sourceTree = "<group>"; };
@@ -184,6 +201,9 @@
 				AFE954CE17E4241000D28E13 /* EventoDetailViewController.m */,
 				AFCBE41D17EEB57A00FBC0C3 /* PhotoViewController.h */,
 				AFCBE41E17EEB57A00FBC0C3 /* PhotoViewController.m */,
+				AFC6197717FF6243005708E4 /* DetailTableCell.h */,
+				AFC6197817FF6243005708E4 /* DetailTableCell.m */,
+				AFC6197A17FF6349005708E4 /* DetailTableCell.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -258,6 +278,12 @@
 				AFEF2F2317FC876C00A5A74B /* Destaques@2x.png */,
 				AFEF2F2417FC876C00A5A74B /* EventosDia@2x.png */,
 				AFEF2F2517FC876C00A5A74B /* Gratis@2x.png */,
+				AFC6199017FF77D3005708E4 /* Phone.png */,
+				AFC6199117FF77D3005708E4 /* Phone@2x.png */,
+				AFC6199417FF78C6005708E4 /* Calendar.png */,
+				AFC6199517FF78C6005708E4 /* Calendar@2x.png */,
+				AFC6199617FF78C6005708E4 /* Pin.png */,
+				AFC6199717FF78C6005708E4 /* Pin@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -365,11 +391,18 @@
 				AFEF2F2817FC876C00A5A74B /* Gratis@2x.png in Resources */,
 				AFF879C717E138CC001C0BE7 /* Default-568h@2x.png in Resources */,
 				AFF879CA17E138CC001C0BE7 /* MainStoryboard.storyboard in Resources */,
+				AFC6199317FF77D3005708E4 /* Phone@2x.png in Resources */,
 				AFEF2F2617FC876C00A5A74B /* Destaques@2x.png in Resources */,
+				AFC6199A17FF78C6005708E4 /* Pin.png in Resources */,
+				AFC6199817FF78C6005708E4 /* Calendar.png in Resources */,
 				AFEF2F2717FC876C00A5A74B /* EventosDia@2x.png in Resources */,
+				AFC6199217FF77D3005708E4 /* Phone.png in Resources */,
+				AFC6197B17FF6349005708E4 /* DetailTableCell.xib in Resources */,
 				AFF62C3D17FB83FD00D56E00 /* Destaques.png in Resources */,
+				AFC6199917FF78C6005708E4 /* Calendar@2x.png in Resources */,
 				AFF62C3E17FB83FD00D56E00 /* EventosDia.png in Resources */,
 				AFE72C7317E7BAED000C2391 /* placeholder.png in Resources */,
+				AFC6199B17FF78C6005708E4 /* Pin@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +444,7 @@
 				AF6F41A717FF44D100696B05 /* Reachability.m in Sources */,
 				AFE954CC17E421FC00D28E13 /* EventosMasterViewController.m in Sources */,
 				AFE954CF17E4241000D28E13 /* EventoDetailViewController.m in Sources */,
+				AFC6197917FF6243005708E4 /* DetailTableCell.m in Sources */,
 				AFE2CB3917E8080A00F229B2 /* EventosDiaDataController.m in Sources */,
 				AFE2CB3C17E80AFC00F229B2 /* EventosDiaMasterViewController.m in Sources */,
 				AFE2CB3F17E80DD300F229B2 /* EventosDestaquesDataController.m in Sources */,
