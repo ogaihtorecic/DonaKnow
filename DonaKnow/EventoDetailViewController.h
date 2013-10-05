@@ -18,6 +18,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *nomeEventoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *localLabel;
 @property (weak, nonatomic) IBOutlet UIButton *imagemEventoButton;
-@property (weak, nonatomic) IBOutlet UIImageView *imagemEvento;
+@property (weak, nonatomic) IBOutlet UIView *imageReferenceView;
 
 @end

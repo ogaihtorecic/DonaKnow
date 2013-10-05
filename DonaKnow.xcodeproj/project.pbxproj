@@ -42,6 +42,7 @@
 		AFE954C917E41F6B00D28E13 /* EventoDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE954C817E41F6B00D28E13 /* EventoDataController.m */; };
 		AFE954CC17E421FC00D28E13 /* EventosMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE954CB17E421FC00D28E13 /* EventosMasterViewController.m */; };
 		AFE954CF17E4241000D28E13 /* EventoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE954CE17E4241000D28E13 /* EventoDetailViewController.m */; };
+		AFEE6E0E1800B76300B6AAFE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFEE6E0D1800B76300B6AAFE /* QuartzCore.framework */; };
 		AFEF025917EE432700775CDD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFEF025817EE432700775CDD /* MapKit.framework */; };
 		AFEF025B17EE444900775CDD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFEF025A17EE444900775CDD /* CoreLocation.framework */; };
 		AFEF2F2617FC876C00A5A74B /* Destaques@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFEF2F2317FC876C00A5A74B /* Destaques@2x.png */; };
@@ -124,6 +125,7 @@
 		AFE954CB17E421FC00D28E13 /* EventosMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventosMasterViewController.m; sourceTree = "<group>"; };
 		AFE954CD17E4241000D28E13 /* EventoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventoDetailViewController.h; sourceTree = "<group>"; };
 		AFE954CE17E4241000D28E13 /* EventoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventoDetailViewController.m; sourceTree = "<group>"; };
+		AFEE6E0D1800B76300B6AAFE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		AFEF025817EE432700775CDD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		AFEF025A17EE444900775CDD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		AFEF2F2317FC876C00A5A74B /* Destaques@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Destaques@2x.png"; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFEE6E0E1800B76300B6AAFE /* QuartzCore.framework in Frameworks */,
 				AF6F41A917FF485800696B05 /* SystemConfiguration.framework in Frameworks */,
 				AF1E4EDB17F7738B00E4AF7A /* Social.framework in Frameworks */,
 				AFEF025B17EE444900775CDD /* CoreLocation.framework in Frameworks */,
@@ -242,6 +245,7 @@
 		AFF879AF17E138CC001C0BE7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AFEE6E0D1800B76300B6AAFE /* QuartzCore.framework */,
 				AF6F41A817FF485800696B05 /* SystemConfiguration.framework */,
 				AF1E4EDA17F7738B00E4AF7A /* Social.framework */,
 				AF05F96B17E6B1C00045D778 /* ImageIO.framework */,

@@ -13,6 +13,7 @@
 
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <Social/Social.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface EventoDetailViewController ()
 
@@ -34,6 +35,8 @@ UITapGestureRecognizer *phoneTap;
 UIAlertView *phoneAlert;
 UIAlertView *mapAlert;
 
+UIImageView *imagemEvento;
+
 - (void)setEvento:(Evento *) newEvento
 {
     if (_evento != newEvento) {
@@ -50,6 +53,26 @@ UIAlertView *mapAlert;
     Evento *theEvento = self.evento;
     
     if (theEvento) {
+        imagemEvento = [[UIImageView alloc] init];
+        [imagemEvento setImageWithURL:[NSURL URLWithString:theEvento.imagem] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+        imagemEvento.bounds = self.imageReferenceView.bounds;
+        imagemEvento.center = self.imageReferenceView.center;
+        imagemEvento.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+        imagemEvento.contentMode = UIViewContentModeScaleAspectFit;
+        
+        UITapGestureRecognizer *imageTap = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(tapImage:)];
+        imageTap.numberOfTapsRequired = 1;
+        [self.imageReferenceView addGestureRecognizer:imageTap];
+        
+        CALayer* containerLayer = [CALayer layer];
+        containerLayer.shadowColor = [UIColor blackColor].CGColor;
+        containerLayer.shadowOffset = CGSizeMake(0.f, 5.f);
+        containerLayer.shadowOpacity = 1.f;
+
+        imagemEvento.layer.masksToBounds = YES;
+        
+        [containerLayer addSublayer:imagemEvento.layer];
+        [self.view.layer addSublayer:containerLayer];
         
         self.nomeEventoLabel.text = theEvento.nome;
         self.nomeEventoLabel.numberOfLines = 2;
@@ -57,15 +80,7 @@ UIAlertView *mapAlert;
         self.localLabel.text = theEvento.local;
         self.localLabel.numberOfLines = 2;
         
-        [self.imagemEvento setImageWithURL:[NSURL URLWithString:theEvento.imagem] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
-        self.imagemEvento.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-        self.imagemEvento.contentMode = UIViewContentModeScaleAspectFit;
         
-        UITapGestureRecognizer *imageTap = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(tapImage:)];
-        imageTap.numberOfTapsRequired = 1;
-        
-        [self.imagemEvento addGestureRecognizer:imageTap];
-        [self.imagemEvento setUserInteractionEnabled:YES];
         
         keys = [[NSMutableArray alloc] init];
         values = [[NSMutableArray alloc] init];
@@ -243,7 +258,7 @@ UIAlertView *mapAlert;
         
         [controller setInitialText:self.shareText];
         [controller addURL:[NSURL URLWithString:self.evento.url]];
-        [controller addImage:self.imagemEvento.image];
+        [controller addImage:imagemEvento.image];
         
         [self presentViewController:controller animated:YES completion:Nil];
         

@@ -149,6 +149,7 @@ UIAlertView *noInternetAlert;
         EventoDetailViewController *detailViewController = [segue destinationViewController];
         
         detailViewController.evento = [self.dataController objectInListAtIndex:[self.tableView indexPathForSelectedRow].row];
+        detailViewController.hidesBottomBarWhenPushed = YES;
     }
 }
 
