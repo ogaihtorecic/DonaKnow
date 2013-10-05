@@ -12,7 +12,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+    UITabBar *tabBar = tabBarController.tabBar;
+    UITabBarItem *eventosDia = [tabBar.items objectAtIndex:0];
+    UITabBarItem *destaques = [tabBar.items objectAtIndex:1];
+    UITabBarItem *gratis = [tabBar.items objectAtIndex:2];
+    
+    
+    eventosDia.selectedImage    = [UIImage imageNamed:@"EventosDia_selected.png"];
+    destaques.selectedImage     = [UIImage imageNamed:@"Destaques_selected.png"];
+    gratis.selectedImage        = [UIImage imageNamed:@"Gratis_selected.png"];
+
     return YES;
 }
 							
