@@ -12,12 +12,11 @@
 
 @class Evento;
 
-@interface EventoDetailViewController : UITableViewController<UITableViewDelegate, UIActionSheetDelegate, UIAlertViewDelegate>
+@interface EventoDetailViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) Evento *evento;
 @property (weak, nonatomic) IBOutlet UILabel *nomeEventoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *localLabel;
-@property (weak, nonatomic) IBOutlet UIButton *imagemEventoButton;
-@property (weak, nonatomic) IBOutlet UIView *imageReferenceView;
+@property (weak, nonatomic) IBOutlet UIButton *imageReferenceButton;
 
 @end

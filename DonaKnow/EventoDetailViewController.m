@@ -51,18 +51,16 @@ UIImageView *imagemEvento;
 {
     // Update the user interface for the detail item.
     Evento *theEvento = self.evento;
-    
+    //self.edgesForExtendedLayout = UIRectEdgeNone;
     if (theEvento) {
-        imagemEvento = [[UIImageView alloc] init];
+        imagemEvento = [[UIImageView alloc] initWithFrame:self.imageReferenceButton.frame];
         [imagemEvento setImageWithURL:[NSURL URLWithString:theEvento.imagem] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
-        imagemEvento.bounds = self.imageReferenceView.bounds;
-        imagemEvento.center = self.imageReferenceView.center;
         imagemEvento.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         imagemEvento.contentMode = UIViewContentModeScaleAspectFit;
         
         UITapGestureRecognizer *imageTap = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(tapImage:)];
         imageTap.numberOfTapsRequired = 1;
-        [self.imageReferenceView addGestureRecognizer:imageTap];
+        [self.imageReferenceButton addGestureRecognizer:imageTap];
         
         CALayer* containerLayer = [CALayer layer];
         containerLayer.shadowColor = [UIColor blackColor].CGColor;
@@ -73,7 +71,7 @@ UIImageView *imagemEvento;
         
         [containerLayer addSublayer:imagemEvento.layer];
         [self.view.layer addSublayer:containerLayer];
-        
+
         self.nomeEventoLabel.text = theEvento.nome;
         self.nomeEventoLabel.numberOfLines = 2;
         
