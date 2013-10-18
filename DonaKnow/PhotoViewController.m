@@ -50,7 +50,7 @@
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     imageView.backgroundColor = [UIColor blackColor];
     
-    [imageView setImageWithURL:[NSURL URLWithString:evento.imagem] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+    [imageView setImageWithURL:[NSURL URLWithString:evento.imagem] placeholderImage:[UIImage imageNamed:@"placeholder_70x70.png"]];
     [imageView setUserInteractionEnabled:TRUE];
     
     self.view = imageView;

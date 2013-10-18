@@ -19,6 +19,22 @@
 		AF27272B1800A4DC00CCA118 /* Destaques_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF2727271800A4DC00CCA118 /* Destaques_selected@2x.png */; };
 		AF27272C1800A4DC00CCA118 /* Gratis_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = AF2727281800A4DC00CCA118 /* Gratis_selected.png */; };
 		AF27272D1800A4DC00CCA118 /* Gratis_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF2727291800A4DC00CCA118 /* Gratis_selected@2x.png */; };
+		AF58591A1811E4C9003DEEA4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF58590A1811E4C9003DEEA4 /* Default-568h@2x.png */; };
+		AF58591B1811E4C9003DEEA4 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF58590B1811E4C9003DEEA4 /* Default@2x.png */; };
+		AF58591C1811E4C9003DEEA4 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AF58590C1811E4C9003DEEA4 /* Default.png */; };
+		AF58591D1811E4C9003DEEA4 /* placeholder_70x70.png in Resources */ = {isa = PBXBuildFile; fileRef = AF58590D1811E4C9003DEEA4 /* placeholder_70x70.png */; };
+		AF58591E1811E4C9003DEEA4 /* placeholder_50x50.png in Resources */ = {isa = PBXBuildFile; fileRef = AF58590E1811E4C9003DEEA4 /* placeholder_50x50.png */; };
+		AF58591F1811E4C9003DEEA4 /* dona_logos_IPhone_29X29.png in Resources */ = {isa = PBXBuildFile; fileRef = AF58590F1811E4C9003DEEA4 /* dona_logos_IPhone_29X29.png */; };
+		AF5859201811E4C9003DEEA4 /* dona_logos_IPhone_40X40.png in Resources */ = {isa = PBXBuildFile; fileRef = AF5859101811E4C9003DEEA4 /* dona_logos_IPhone_40X40.png */; };
+		AF5859211811E4C9003DEEA4 /* dona_logos_IPhone_58X58.png in Resources */ = {isa = PBXBuildFile; fileRef = AF5859111811E4C9003DEEA4 /* dona_logos_IPhone_58X58.png */; };
+		AF5859221811E4C9003DEEA4 /* dona_logos_IPhone_76X76.png in Resources */ = {isa = PBXBuildFile; fileRef = AF5859121811E4C9003DEEA4 /* dona_logos_IPhone_76X76.png */; };
+		AF5859231811E4C9003DEEA4 /* dona_logos_IPhone_80X80.png in Resources */ = {isa = PBXBuildFile; fileRef = AF5859131811E4C9003DEEA4 /* dona_logos_IPhone_80X80.png */; };
+		AF5859241811E4C9003DEEA4 /* dona_logos_IPhone_120X120.png in Resources */ = {isa = PBXBuildFile; fileRef = AF5859141811E4C9003DEEA4 /* dona_logos_IPhone_120X120.png */; };
+		AF5859251811E4C9003DEEA4 /* dona_logos_IPhone_152X152.png in Resources */ = {isa = PBXBuildFile; fileRef = AF5859151811E4C9003DEEA4 /* dona_logos_IPhone_152X152.png */; };
+		AF5859261811E4C9003DEEA4 /* dona_logos_IPhone_512X512.png in Resources */ = {isa = PBXBuildFile; fileRef = AF5859161811E4C9003DEEA4 /* dona_logos_IPhone_512X512.png */; };
+		AF5859271811E4C9003DEEA4 /* dona_logos_IPhone_1024X1024.png in Resources */ = {isa = PBXBuildFile; fileRef = AF5859171811E4C9003DEEA4 /* dona_logos_IPhone_1024X1024.png */; };
+		AF5859281811E4C9003DEEA4 /* icone_dona_logos_IPhone_57X57.png in Resources */ = {isa = PBXBuildFile; fileRef = AF5859181811E4C9003DEEA4 /* icone_dona_logos_IPhone_57X57.png */; };
+		AF5859291811E4C9003DEEA4 /* icone_dona_logos_IPhone_114X114.png in Resources */ = {isa = PBXBuildFile; fileRef = AF5859191811E4C9003DEEA4 /* icone_dona_logos_IPhone_114X114.png */; };
 		AF6F41A717FF44D100696B05 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AF6F41A617FF44D100696B05 /* Reachability.m */; };
 		AF6F41A917FF485800696B05 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF6F41A817FF485800696B05 /* SystemConfiguration.framework */; };
 		AFA0739A17EA878700EB7728 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AFA0739917EA878700EB7728 /* MBProgressHUD.m */; };
@@ -37,7 +53,6 @@
 		AFE2CB4217E8108900F229B2 /* EventosDestaquesMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE2CB4117E8108900F229B2 /* EventosDestaquesMasterViewController.m */; };
 		AFE2CB4717E812DD00F229B2 /* EventosGratisDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE2CB4617E812DD00F229B2 /* EventosGratisDataController.m */; };
 		AFE2CB4A17E8136700F229B2 /* EventosGratisMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE2CB4917E8136700F229B2 /* EventosGratisMasterViewController.m */; };
-		AFE72C7317E7BAED000C2391 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE72C7217E7BAED000C2391 /* placeholder.png */; };
 		AFE954C617E41DD800D28E13 /* Evento.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE954C517E41DD800D28E13 /* Evento.m */; };
 		AFE954C917E41F6B00D28E13 /* EventoDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE954C817E41F6B00D28E13 /* EventoDataController.m */; };
 		AFE954CC17E421FC00D28E13 /* EventosMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE954CB17E421FC00D28E13 /* EventosMasterViewController.m */; };
@@ -54,9 +69,6 @@
 		AFF879BB17E138CC001C0BE7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AFF879B917E138CC001C0BE7 /* InfoPlist.strings */; };
 		AFF879BD17E138CC001C0BE7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF879BC17E138CC001C0BE7 /* main.m */; };
 		AFF879C117E138CC001C0BE7 /* DonaKnowAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF879C017E138CC001C0BE7 /* DonaKnowAppDelegate.m */; };
-		AFF879C317E138CC001C0BE7 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF879C217E138CC001C0BE7 /* Default.png */; };
-		AFF879C517E138CC001C0BE7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF879C417E138CC001C0BE7 /* Default@2x.png */; };
-		AFF879C717E138CC001C0BE7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF879C617E138CC001C0BE7 /* Default-568h@2x.png */; };
 		AFF879CA17E138CC001C0BE7 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFF879C817E138CC001C0BE7 /* MainStoryboard.storyboard */; };
 		AFF879E017E138CC001C0BE7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFF879DF17E138CC001C0BE7 /* SenTestingKit.framework */; };
 		AFF879E117E138CC001C0BE7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFF879B017E138CC001C0BE7 /* UIKit.framework */; };
@@ -88,6 +100,22 @@
 		AF2727271800A4DC00CCA118 /* Destaques_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Destaques_selected@2x.png"; sourceTree = "<group>"; };
 		AF2727281800A4DC00CCA118 /* Gratis_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gratis_selected.png; sourceTree = "<group>"; };
 		AF2727291800A4DC00CCA118 /* Gratis_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gratis_selected@2x.png"; sourceTree = "<group>"; };
+		AF58590A1811E4C9003DEEA4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		AF58590B1811E4C9003DEEA4 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		AF58590C1811E4C9003DEEA4 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		AF58590D1811E4C9003DEEA4 /* placeholder_70x70.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder_70x70.png; sourceTree = "<group>"; };
+		AF58590E1811E4C9003DEEA4 /* placeholder_50x50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder_50x50.png; sourceTree = "<group>"; };
+		AF58590F1811E4C9003DEEA4 /* dona_logos_IPhone_29X29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dona_logos_IPhone_29X29.png; sourceTree = "<group>"; };
+		AF5859101811E4C9003DEEA4 /* dona_logos_IPhone_40X40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dona_logos_IPhone_40X40.png; sourceTree = "<group>"; };
+		AF5859111811E4C9003DEEA4 /* dona_logos_IPhone_58X58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dona_logos_IPhone_58X58.png; sourceTree = "<group>"; };
+		AF5859121811E4C9003DEEA4 /* dona_logos_IPhone_76X76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dona_logos_IPhone_76X76.png; sourceTree = "<group>"; };
+		AF5859131811E4C9003DEEA4 /* dona_logos_IPhone_80X80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dona_logos_IPhone_80X80.png; sourceTree = "<group>"; };
+		AF5859141811E4C9003DEEA4 /* dona_logos_IPhone_120X120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dona_logos_IPhone_120X120.png; sourceTree = "<group>"; };
+		AF5859151811E4C9003DEEA4 /* dona_logos_IPhone_152X152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dona_logos_IPhone_152X152.png; sourceTree = "<group>"; };
+		AF5859161811E4C9003DEEA4 /* dona_logos_IPhone_512X512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dona_logos_IPhone_512X512.png; sourceTree = "<group>"; };
+		AF5859171811E4C9003DEEA4 /* dona_logos_IPhone_1024X1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dona_logos_IPhone_1024X1024.png; sourceTree = "<group>"; };
+		AF5859181811E4C9003DEEA4 /* icone_dona_logos_IPhone_57X57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_dona_logos_IPhone_57X57.png; sourceTree = "<group>"; };
+		AF5859191811E4C9003DEEA4 /* icone_dona_logos_IPhone_114X114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icone_dona_logos_IPhone_114X114.png; sourceTree = "<group>"; };
 		AF6F41A517FF44D100696B05 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		AF6F41A617FF44D100696B05 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		AF6F41A817FF485800696B05 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -116,7 +144,6 @@
 		AFE2CB4617E812DD00F229B2 /* EventosGratisDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventosGratisDataController.m; sourceTree = "<group>"; };
 		AFE2CB4817E8136700F229B2 /* EventosGratisMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventosGratisMasterViewController.h; sourceTree = "<group>"; };
 		AFE2CB4917E8136700F229B2 /* EventosGratisMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventosGratisMasterViewController.m; sourceTree = "<group>"; };
-		AFE72C7217E7BAED000C2391 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		AFE954C417E41DD800D28E13 /* Evento.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Evento.h; sourceTree = "<group>"; };
 		AFE954C517E41DD800D28E13 /* Evento.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Evento.m; sourceTree = "<group>"; };
 		AFE954C717E41F6B00D28E13 /* EventoDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventoDataController.h; sourceTree = "<group>"; };
@@ -141,9 +168,6 @@
 		AFF879BE17E138CC001C0BE7 /* DonaKnow-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DonaKnow-Prefix.pch"; sourceTree = "<group>"; };
 		AFF879BF17E138CC001C0BE7 /* DonaKnowAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DonaKnowAppDelegate.h; sourceTree = "<group>"; };
 		AFF879C017E138CC001C0BE7 /* DonaKnowAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DonaKnowAppDelegate.m; sourceTree = "<group>"; };
-		AFF879C217E138CC001C0BE7 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		AFF879C417E138CC001C0BE7 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		AFF879C617E138CC001C0BE7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		AFF879C917E138CC001C0BE7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		AFF879DE17E138CC001C0BE7 /* DonaKnowTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DonaKnowTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFF879DF17E138CC001C0BE7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -284,10 +308,22 @@
 				AFF879B917E138CC001C0BE7 /* InfoPlist.strings */,
 				AFF879BC17E138CC001C0BE7 /* main.m */,
 				AFF879BE17E138CC001C0BE7 /* DonaKnow-Prefix.pch */,
-				AFE72C7217E7BAED000C2391 /* placeholder.png */,
-				AFF879C217E138CC001C0BE7 /* Default.png */,
-				AFF879C417E138CC001C0BE7 /* Default@2x.png */,
-				AFF879C617E138CC001C0BE7 /* Default-568h@2x.png */,
+				AF58590A1811E4C9003DEEA4 /* Default-568h@2x.png */,
+				AF58590B1811E4C9003DEEA4 /* Default@2x.png */,
+				AF58590C1811E4C9003DEEA4 /* Default.png */,
+				AF58590D1811E4C9003DEEA4 /* placeholder_70x70.png */,
+				AF58590E1811E4C9003DEEA4 /* placeholder_50x50.png */,
+				AF58590F1811E4C9003DEEA4 /* dona_logos_IPhone_29X29.png */,
+				AF5859101811E4C9003DEEA4 /* dona_logos_IPhone_40X40.png */,
+				AF5859111811E4C9003DEEA4 /* dona_logos_IPhone_58X58.png */,
+				AF5859121811E4C9003DEEA4 /* dona_logos_IPhone_76X76.png */,
+				AF5859131811E4C9003DEEA4 /* dona_logos_IPhone_80X80.png */,
+				AF5859141811E4C9003DEEA4 /* dona_logos_IPhone_120X120.png */,
+				AF5859151811E4C9003DEEA4 /* dona_logos_IPhone_152X152.png */,
+				AF5859161811E4C9003DEEA4 /* dona_logos_IPhone_512X512.png */,
+				AF5859171811E4C9003DEEA4 /* dona_logos_IPhone_1024X1024.png */,
+				AF5859181811E4C9003DEEA4 /* icone_dona_logos_IPhone_57X57.png */,
+				AF5859191811E4C9003DEEA4 /* icone_dona_logos_IPhone_114X114.png */,
 				AF27271D1800A0C900CCA118 /* EventosDia.png */,
 				AFEF2F2417FC876C00A5A74B /* EventosDia@2x.png */,
 				AF2727221800A21200CCA118 /* EventosDia_selected.png */,
@@ -406,29 +442,41 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF5859201811E4C9003DEEA4 /* dona_logos_IPhone_40X40.png in Resources */,
+				AF58591B1811E4C9003DEEA4 /* Default@2x.png in Resources */,
+				AF5859251811E4C9003DEEA4 /* dona_logos_IPhone_152X152.png in Resources */,
+				AF5859211811E4C9003DEEA4 /* dona_logos_IPhone_58X58.png in Resources */,
+				AF5859261811E4C9003DEEA4 /* dona_logos_IPhone_512X512.png in Resources */,
+				AF5859241811E4C9003DEEA4 /* dona_logos_IPhone_120X120.png in Resources */,
 				AF27272C1800A4DC00CCA118 /* Gratis_selected.png in Resources */,
+				AF58591F1811E4C9003DEEA4 /* dona_logos_IPhone_29X29.png in Resources */,
 				AF27272D1800A4DC00CCA118 /* Gratis_selected@2x.png in Resources */,
 				AF2727241800A21200CCA118 /* EventosDia_selected.png in Resources */,
 				AFF879BB17E138CC001C0BE7 /* InfoPlist.strings in Resources */,
 				AF2727201800A0C900CCA118 /* EventosDia.png in Resources */,
-				AFF879C317E138CC001C0BE7 /* Default.png in Resources */,
-				AFF879C517E138CC001C0BE7 /* Default@2x.png in Resources */,
 				AFEF2F2817FC876C00A5A74B /* Gratis@2x.png in Resources */,
 				AF27272A1800A4DC00CCA118 /* Destaques_selected.png in Resources */,
-				AFF879C717E138CC001C0BE7 /* Default-568h@2x.png in Resources */,
+				AF58591E1811E4C9003DEEA4 /* placeholder_50x50.png in Resources */,
 				AF2727211800A0C900CCA118 /* Gratis.png in Resources */,
 				AFF879CA17E138CC001C0BE7 /* MainStoryboard.storyboard in Resources */,
 				AFC6199317FF77D3005708E4 /* Phone@2x.png in Resources */,
 				AF27272B1800A4DC00CCA118 /* Destaques_selected@2x.png in Resources */,
 				AFEF2F2617FC876C00A5A74B /* Destaques@2x.png in Resources */,
 				AFC6199A17FF78C6005708E4 /* Pin.png in Resources */,
+				AF58591D1811E4C9003DEEA4 /* placeholder_70x70.png in Resources */,
 				AFC6199817FF78C6005708E4 /* Calendar.png in Resources */,
 				AFEF2F2717FC876C00A5A74B /* EventosDia@2x.png in Resources */,
 				AF2727251800A21200CCA118 /* EventosDia_selected@2x.png in Resources */,
 				AFC6199217FF77D3005708E4 /* Phone.png in Resources */,
+				AF58591A1811E4C9003DEEA4 /* Default-568h@2x.png in Resources */,
+				AF58591C1811E4C9003DEEA4 /* Default.png in Resources */,
 				AFC6197B17FF6349005708E4 /* DetailTableCell.xib in Resources */,
 				AFC6199917FF78C6005708E4 /* Calendar@2x.png in Resources */,
-				AFE72C7317E7BAED000C2391 /* placeholder.png in Resources */,
+				AF5859271811E4C9003DEEA4 /* dona_logos_IPhone_1024X1024.png in Resources */,
+				AF5859281811E4C9003DEEA4 /* icone_dona_logos_IPhone_57X57.png in Resources */,
+				AF5859221811E4C9003DEEA4 /* dona_logos_IPhone_76X76.png in Resources */,
+				AF5859231811E4C9003DEEA4 /* dona_logos_IPhone_80X80.png in Resources */,
+				AF5859291811E4C9003DEEA4 /* icone_dona_logos_IPhone_114X114.png in Resources */,
 				AFC6199B17FF78C6005708E4 /* Pin@2x.png in Resources */,
 				AF27271F1800A0C900CCA118 /* Destaques.png in Resources */,
 			);

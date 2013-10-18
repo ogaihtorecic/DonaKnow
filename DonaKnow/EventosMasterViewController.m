@@ -133,7 +133,7 @@ UIAlertView *noInternetAlert;
     [[cell textLabel] setText:eventoAtIndex.nome];
     [[cell detailTextLabel] setText:eventoAtIndex.local];
     
-    [cell.imageView setImageWithURL:[NSURL URLWithString:eventoAtIndex.thumbnail] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+    [cell.imageView setImageWithURL:[NSURL URLWithString:eventoAtIndex.thumbnail] placeholderImage:[UIImage imageNamed:@"placeholder_50x50.png"]];
     
     return cell;
 }

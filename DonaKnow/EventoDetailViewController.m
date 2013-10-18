@@ -54,7 +54,7 @@ UIImageView *imagemEvento;
     //self.edgesForExtendedLayout = UIRectEdgeNone;
     if (theEvento) {
         imagemEvento = [[UIImageView alloc] initWithFrame:self.imageReferenceButton.frame];
-        [imagemEvento setImageWithURL:[NSURL URLWithString:theEvento.imagem] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+        [imagemEvento setImageWithURL:[NSURL URLWithString:theEvento.imagem] placeholderImage:[UIImage imageNamed:@"placeholder_70x70.png"]];
         imagemEvento.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         imagemEvento.contentMode = UIViewContentModeScaleAspectFit;
         
