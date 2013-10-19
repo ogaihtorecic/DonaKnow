@@ -12,6 +12,6 @@
 
 @property (nonatomic, weak) IBOutlet UILabel *titleLabel;
 @property (nonatomic, weak) IBOutlet UILabel *detailLabel;
-@property (nonatomic, weak) IBOutlet UIImageView *actionImageView;
+@property (nonatomic, weak) IBOutlet UIButton *actionButton;
 
 @end

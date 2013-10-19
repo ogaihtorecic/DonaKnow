@@ -24,17 +24,18 @@
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Mg-Xy-cQ0">
                         <rect key="frame" x="10" y="22" width="261" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WDg-8F-Kf2">
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bz9-Lw-QCf">
                         <rect key="frame" x="271" y="0.0" width="49" height="49"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    </button>
                 </subviews>
             </tableViewCellContentView>
             <connections>
-                <outlet property="actionImageView" destination="WDg-8F-Kf2" id="qJc-rn-Ked"/>
+                <outlet property="actionButton" destination="bz9-Lw-QCf" id="gfo-da-ncO"/>
                 <outlet property="detailLabel" destination="5Mg-Xy-cQ0" id="ZBR-E1-sSj"/>
                 <outlet property="titleLabel" destination="B3S-rl-cl3" id="Z5B-JJ-AYa"/>
             </connections>

@@ -28,10 +28,6 @@
 NSMutableArray *keys;
 NSMutableArray *values;
 
-UITapGestureRecognizer *pinTap;
-UITapGestureRecognizer *calendarTap;
-UITapGestureRecognizer *phoneTap;
-
 UIAlertView *phoneAlert;
 UIAlertView *mapAlert;
 
@@ -116,15 +112,6 @@ UIImageView *imagemEvento;
             [values addObject:theEvento.observacoes];
         }
         
-        pinTap = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(tapPin:)];
-        pinTap.numberOfTapsRequired = 1;
-        
-        calendarTap = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(tapCalendar:)];
-        pinTap.numberOfTapsRequired = 1;
-        
-        phoneTap = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(tapPhone:)];
-        phoneTap.numberOfTapsRequired = 1;
-        
         phoneAlert = [[UIAlertView alloc] initWithTitle:nil message:self.evento.informacoes delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Ligar", nil];
         mapAlert = [[UIAlertView alloc] initWithTitle:nil message:@"Abrir Mapa?" delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"OK", nil];
     }
@@ -202,16 +189,20 @@ UIImageView *imagemEvento;
     }
     cell.titleLabel.text = [keys objectAtIndex:indexPath.row];
     cell.detailLabel.text = [values objectAtIndex:indexPath.row];
+    [cell.actionButton setShowsTouchWhenHighlighted:YES];
     
     if(([cell.titleLabel.text isEqualToString:@"Endereço"] && self.evento.latitude != 0.000000 && self.evento.longitude != 0.000000)) {
-        cell.actionImageView.image = [UIImage imageNamed:@"Pin.png"];
-        [cell.actionImageView addGestureRecognizer:pinTap];
+        [cell.actionButton setImage:[UIImage imageNamed:@"Pin.png"] forState:UIControlStateNormal];
+        [cell.actionButton addTarget:self action:@selector(tapPin:) forControlEvents:UIControlEventTouchUpInside];
+        
     } else if([cell.titleLabel.text isEqualToString:@"Informações"]) {
-        cell.actionImageView.image = [UIImage imageNamed:@"Phone.png"];
-        [cell.actionImageView addGestureRecognizer:phoneTap];
+        [cell.actionButton setImage:[UIImage imageNamed:@"Phone.png"] forState:UIControlStateNormal];
+        [cell.actionButton addTarget:self action:@selector(tapPhone:) forControlEvents:UIControlEventTouchUpInside];
+        
     } else if([cell.titleLabel.text isEqualToString:@"Data"]) {
-        cell.actionImageView.image = [UIImage imageNamed:@"Calendar.png"];
-        [cell.actionImageView addGestureRecognizer:calendarTap];
+        [cell.actionButton setImage:[UIImage imageNamed:@"Calendar.png"] forState:UIControlStateNormal];
+        [cell.actionButton addTarget:self action:@selector(tapCalendar:) forControlEvents:UIControlEventTouchUpInside];
+        
     }
     
     return cell;
