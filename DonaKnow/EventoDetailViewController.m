@@ -15,6 +15,12 @@
 #import <Social/Social.h>
 #import <QuartzCore/QuartzCore.h>
 
+#define CELL_CONTENT_WIDTH  261.0f
+#define FONT_SIZE           16.0f
+#define TEXT_X              10.0f
+#define TEXT_Y              25.0f
+#define TEXT_MAX_HEIGHT     28.0f
+
 @interface EventoDetailViewController ()
 
 - (void)configureView;
@@ -182,13 +188,22 @@ UIImageView *imagemEvento;
     
     static NSString *tableIdentifier = @"DetailTableCell";
     DetailTableCell *cell = (DetailTableCell *)[tableView dequeueReusableCellWithIdentifier:tableIdentifier];
+    UILabel *label = nil;
+    
     if (cell == nil)
     {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:tableIdentifier owner:self options:nil];
         cell = [nib objectAtIndex:0];
+        
+        label = [[UILabel alloc] initWithFrame:CGRectZero];
+        label.lineBreakMode = NSLineBreakByWordWrapping;
+        [label setNumberOfLines:0];
+        [label setFont:[UIFont systemFontOfSize:FONT_SIZE]];
+        [label setTag:1];
+        
+        [[cell contentView] addSubview:label];
     }
     cell.titleLabel.text = [keys objectAtIndex:indexPath.row];
-    cell.detailLabel.text = [values objectAtIndex:indexPath.row];
     [cell.actionButton setShowsTouchWhenHighlighted:YES];
     
     if(([cell.titleLabel.text isEqualToString:@"Endereço"] && self.evento.latitude != 0.000000 && self.evento.longitude != 0.000000)) {
@@ -204,13 +219,36 @@ UIImageView *imagemEvento;
         [cell.actionButton addTarget:self action:@selector(tapCalendar:) forControlEvents:UIControlEventTouchUpInside];
         
     }
+
+    NSString *text = [values objectAtIndex:indexPath.row];
+    
+    CGSize constraint = CGSizeMake(CELL_CONTENT_WIDTH, 20000.0f);
+    
+    UIFont *font = [UIFont systemFontOfSize:FONT_SIZE];
+    NSDictionary *attrs = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, nil];
+    CGRect rect = [text boundingRectWithSize:constraint options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading) attributes:attrs context:nil];
+    
+    if (!label)
+        label = (UILabel*)[cell viewWithTag:1];
+    
+    [label setText:text];
+    [label setFrame:CGRectMake(TEXT_X, TEXT_Y, CELL_CONTENT_WIDTH, MAX(rect.size.height, TEXT_MAX_HEIGHT))];
     
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 50;
+    NSString *text = [values objectAtIndex:[indexPath row]];
+    CGSize constraint = CGSizeMake(CELL_CONTENT_WIDTH, 20000.0f);
+    
+    UIFont *font = [UIFont systemFontOfSize:FONT_SIZE];
+    NSDictionary *attrs = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, nil];
+    CGRect rect = [text boundingRectWithSize:constraint options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading) attributes:attrs context:nil];
+    
+    CGFloat height = MAX(rect.size.height, TEXT_MAX_HEIGHT);
+    
+    return TEXT_Y + height + 7.0f;
 }
 
 - (void)viewDidLoad

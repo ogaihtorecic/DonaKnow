@@ -11,7 +11,6 @@
 @implementation DetailTableCell
 
 @synthesize titleLabel = _titleLabel;
-@synthesize detailLabel = _detailLabel;
 @synthesize actionButton = _actionButton;
 
 
