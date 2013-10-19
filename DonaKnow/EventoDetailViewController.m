@@ -20,6 +20,11 @@
 #define TEXT_X              10.0f
 #define TEXT_Y              25.0f
 #define TEXT_MAX_HEIGHT     28.0f
+#define HEADER_TEXT_WIDTH   232.0f
+#define HEADER_TEXT_X       88.0f
+#define HEADER_HEIGHT       100.0f
+#define CONTENT_MARGIN      7.0f
+#define HEADER_CONTENT_MARGIN      5.0f
 
 @interface EventoDetailViewController ()
 
@@ -74,12 +79,36 @@ UIImageView *imagemEvento;
         [containerLayer addSublayer:imagemEvento.layer];
         [self.view.layer addSublayer:containerLayer];
 
-        self.nomeEventoLabel.text = theEvento.nome;
-        self.nomeEventoLabel.numberOfLines = 2;
+        UIFont *nomeEventoFont = [UIFont boldSystemFontOfSize:FONT_SIZE];
+        UILabel *nomeEventoLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        nomeEventoLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        [nomeEventoLabel setNumberOfLines:0];
+        [nomeEventoLabel setFont:nomeEventoFont];
+        [self.header addSubview:nomeEventoLabel];
         
-        self.localLabel.text = theEvento.local;
-        self.localLabel.numberOfLines = 2;
+        CGSize headerTextSize = CGSizeMake(HEADER_TEXT_WIDTH, 20000.0f);
+        NSDictionary *attrs = [NSDictionary dictionaryWithObjectsAndKeys:nomeEventoFont, NSFontAttributeName, nil];
+        CGRect nomeEventoRect = [theEvento.nome boundingRectWithSize:headerTextSize options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading) attributes:attrs context:nil];
         
+        UIFont *localEventoFont = [UIFont systemFontOfSize:FONT_SIZE];
+        UILabel *localEventoLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        localEventoLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        [localEventoLabel setNumberOfLines:0];
+        [localEventoLabel setFont:localEventoFont];
+        [self.header addSubview:localEventoLabel];
+        
+        attrs = [NSDictionary dictionaryWithObjectsAndKeys:localEventoFont, NSFontAttributeName, nil];
+        CGRect localEventoRect = [theEvento.nome boundingRectWithSize:headerTextSize options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading) attributes:attrs context:nil];
+        
+        float totalHeight = nomeEventoRect.size.height + localEventoRect.size.height;
+        float nomeEventoY = HEADER_HEIGHT / 2 - totalHeight / 2;
+        float localEventoY = nomeEventoY + nomeEventoRect.size.height + HEADER_CONTENT_MARGIN;
+        
+        [nomeEventoLabel setText:theEvento.nome];
+        [nomeEventoLabel setFrame:CGRectMake(HEADER_TEXT_X, nomeEventoY, HEADER_TEXT_WIDTH, nomeEventoRect.size.height)];
+        
+        [localEventoLabel setText:theEvento.local];
+        [localEventoLabel setFrame:CGRectMake(HEADER_TEXT_X, localEventoY, HEADER_TEXT_WIDTH, localEventoRect.size.height)];
         
         
         keys = [[NSMutableArray alloc] init];
@@ -248,7 +277,7 @@ UIImageView *imagemEvento;
     
     CGFloat height = MAX(rect.size.height, TEXT_MAX_HEIGHT);
     
-    return TEXT_Y + height + 7.0f;
+    return TEXT_Y + height + CONTENT_MARGIN;
 }
 
 - (void)viewDidLoad
