@@ -204,7 +204,26 @@ UIImageView *imagemEvento;
             }
         }
     } else if(alertView == calendarAlert && buttonIndex == 1) {
-        
+        EKEventStore *eventStore = [[EKEventStore alloc] init];
+        [eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
+            if (!granted) { return; }
+            EKEvent *event  = [EKEvent eventWithEventStore:eventStore];
+            event.title = self.evento.nome;
+            event.location = self.evento.local;
+            event.startDate = self.evento.data;
+            event.endDate   = [event.startDate dateByAddingTimeInterval:60*60];
+            event.URL = [NSURL URLWithString:self.evento.url];
+            event.notes = self.evento.atracoes;
+            
+            EKEventEditViewController *addController = [[EKEventEditViewController alloc] initWithNibName:nil bundle:nil];
+            
+            addController.eventStore = eventStore;
+            addController.event=event;
+            
+            [self presentViewController:addController animated:YES completion:nil];
+            
+            addController.editViewDelegate = self;
+        }];
         
     } else if(alertView == webAlert && buttonIndex == 1) {
         NSString *escaped = [self.evento.atracoes stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -341,6 +360,11 @@ UIImageView *imagemEvento;
     [text appendString:@" @ "];
     [text appendString:self.evento.local];
     return text;
+}
+
+- (void)eventEditViewController:(EKEventEditViewController *)controller didCompleteWithAction:(EKEventEditViewAction)action
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

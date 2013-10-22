@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import <EventKitUI/EventKitUI.h>
 
 @class Evento;
 
-@interface EventoDetailViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate, UIAlertViewDelegate>
+@interface EventoDetailViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate, UIAlertViewDelegate, EKEventEditViewDelegate>
 
 @property (strong, nonatomic) Evento *evento;
 @property (weak, nonatomic) IBOutlet UIView *header;

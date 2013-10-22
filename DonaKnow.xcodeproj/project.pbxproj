@@ -65,6 +65,8 @@
 		AFEF2F2617FC876C00A5A74B /* Destaques@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFEF2F2317FC876C00A5A74B /* Destaques@2x.png */; };
 		AFEF2F2717FC876C00A5A74B /* EventosDia@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFEF2F2417FC876C00A5A74B /* EventosDia@2x.png */; };
 		AFEF2F2817FC876C00A5A74B /* Gratis@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFEF2F2517FC876C00A5A74B /* Gratis@2x.png */; };
+		AFF0B8101815FF9F0037151F /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFF0B80F1815FF9F0037151F /* EventKitUI.framework */; };
+		AFF0B812181603AE0037151F /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFF0B811181603AE0037151F /* EventKit.framework */; };
 		AFF879B117E138CC001C0BE7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFF879B017E138CC001C0BE7 /* UIKit.framework */; };
 		AFF879B317E138CC001C0BE7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFF879B217E138CC001C0BE7 /* Foundation.framework */; };
 		AFF879B517E138CC001C0BE7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFF879B417E138CC001C0BE7 /* CoreGraphics.framework */; };
@@ -162,6 +164,8 @@
 		AFEF2F2317FC876C00A5A74B /* Destaques@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Destaques@2x.png"; sourceTree = "<group>"; };
 		AFEF2F2417FC876C00A5A74B /* EventosDia@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EventosDia@2x.png"; sourceTree = "<group>"; };
 		AFEF2F2517FC876C00A5A74B /* Gratis@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gratis@2x.png"; sourceTree = "<group>"; };
+		AFF0B80F1815FF9F0037151F /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		AFF0B811181603AE0037151F /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		AFF879AD17E138CC001C0BE7 /* DonaKnow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DonaKnow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFF879B017E138CC001C0BE7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AFF879B217E138CC001C0BE7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -186,6 +190,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFF0B812181603AE0037151F /* EventKit.framework in Frameworks */,
+				AFF0B8101815FF9F0037151F /* EventKitUI.framework in Frameworks */,
 				AFEE6E0E1800B76300B6AAFE /* QuartzCore.framework in Frameworks */,
 				AF6F41A917FF485800696B05 /* SystemConfiguration.framework in Frameworks */,
 				AF1E4EDB17F7738B00E4AF7A /* Social.framework in Frameworks */,
@@ -273,6 +279,8 @@
 		AFF879AF17E138CC001C0BE7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AFF0B811181603AE0037151F /* EventKit.framework */,
+				AFF0B80F1815FF9F0037151F /* EventKitUI.framework */,
 				AFEE6E0D1800B76300B6AAFE /* QuartzCore.framework */,
 				AF6F41A817FF485800696B05 /* SystemConfiguration.framework */,
 				AF1E4EDA17F7738B00E4AF7A /* Social.framework */,
