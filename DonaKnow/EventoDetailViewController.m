@@ -80,7 +80,7 @@ UIImageView *imagemEvento;
         
         [containerLayer addSublayer:imagemEvento.layer];
         [self.view.layer addSublayer:containerLayer];
-
+        
         UIFont *nomeEventoFont = [UIFont boldSystemFontOfSize:FONT_SIZE];
         UILabel *nomeEventoLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         nomeEventoLabel.lineBreakMode = NSLineBreakByWordWrapping;
