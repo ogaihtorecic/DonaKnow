@@ -41,6 +41,8 @@ NSMutableArray *values;
 
 UIAlertView *phoneAlert;
 UIAlertView *mapAlert;
+UIAlertView *calendarAlert;
+UIAlertView *webAlert;
 
 UIImageView *imagemEvento;
 
@@ -149,6 +151,8 @@ UIImageView *imagemEvento;
         
         phoneAlert = [[UIAlertView alloc] initWithTitle:nil message:self.evento.informacoes delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Ligar", nil];
         mapAlert = [[UIAlertView alloc] initWithTitle:nil message:@"Abrir Mapa?" delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"OK", nil];
+        calendarAlert = [[UIAlertView alloc] initWithTitle:nil message:@"Criar Evento?" delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"OK", nil];
+        webAlert = [[UIAlertView alloc] initWithTitle:nil message:@"Abrir Navegador?" delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"OK", nil];
     }
 }
 
@@ -167,7 +171,11 @@ UIImageView *imagemEvento;
 }
 
 - (void)tapCalendar:(UIGestureRecognizer *)gesture {
-    
+    [calendarAlert show];
+}
+
+- (void)tapWeb:(UIGestureRecognizer *)gesture {
+    [webAlert show];
 }
 
 - (void)tapPhone:(UIGestureRecognizer *)gesture {
@@ -178,30 +186,32 @@ UIImageView *imagemEvento;
     if(alertView == phoneAlert && buttonIndex == 1) {
         NSString *phoneNumber = [@"tel://" stringByAppendingString:self.evento.informacoes];
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
+        
     } else if(alertView == mapAlert && buttonIndex == 1) {
         Evento *theEvento = self.evento;
         if(theEvento.latitude != 0.000000 && theEvento.longitude != 0.000000) {
             Class mapItemClass = [MKMapItem class];
             if (mapItemClass && [mapItemClass respondsToSelector:@selector(openMapsWithItems:launchOptions:)])
             {
-                // Create an MKMapItem to pass to the Maps app
-                CLLocationCoordinate2D coordinate =
-                CLLocationCoordinate2DMake(theEvento.latitude, theEvento.longitude);
+                CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(theEvento.latitude, theEvento.longitude);
                 MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:coordinate addressDictionary:nil];
                 MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
                 [mapItem setName:theEvento.local];
-                
-                // Set the directions mode to "Walking"
-                // Can use MKLaunchOptionsDirectionsModeDriving instead
+
                 NSDictionary *launchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking};
-                // Get the "Current User Location" MKMapItem
                 MKMapItem *currentLocationMapItem = [MKMapItem mapItemForCurrentLocation];
-                // Pass the current location and destination map items to the Maps app
-                // Set the direction mode in the launchOptions dictionary
-                [MKMapItem openMapsWithItems:@[currentLocationMapItem, mapItem]
-                               launchOptions:launchOptions];
+                [MKMapItem openMapsWithItems:@[currentLocationMapItem, mapItem] launchOptions:launchOptions];
             }
         }
+    } else if(alertView == calendarAlert && buttonIndex == 1) {
+        
+        
+    } else if(alertView == webAlert && buttonIndex == 1) {
+        NSString *escaped = [self.evento.atracoes stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        NSString *urlString = [NSString stringWithFormat:@"http://www.google.com/search?q=%@", escaped];
+        
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
+        
     }
 }
 
@@ -246,6 +256,10 @@ UIImageView *imagemEvento;
     } else if([cell.titleLabel.text isEqualToString:@"Data"]) {
         [cell.actionButton setImage:[UIImage imageNamed:@"Calendar.png"] forState:UIControlStateNormal];
         [cell.actionButton addTarget:self action:@selector(tapCalendar:) forControlEvents:UIControlEventTouchUpInside];
+        
+    } else if([cell.titleLabel.text isEqualToString:@"Atrações"]) {
+        [cell.actionButton setImage:[UIImage imageNamed:@"Web.png"] forState:UIControlStateNormal];
+        [cell.actionButton addTarget:self action:@selector(tapWeb:) forControlEvents:UIControlEventTouchUpInside];
         
     }
 
