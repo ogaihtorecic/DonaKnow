@@ -12,6 +12,8 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <QuartzCore/QuartzCore.h>
 
+#define HEIGHT_MARGIN   7.0f
+
 @interface PhotoViewController ()
 
 - (UIImage*)placeholderImage;
@@ -81,17 +83,45 @@
 }
 
 - (UIImage*)placeholderImage {
-    NSString *nomeEvento = evento.nome;
-    UIFont *font = [UIFont systemFontOfSize:16.0f];
-    CGSize size  = [nomeEvento sizeWithFont:font];
     
-    if (UIGraphicsBeginImageContextWithOptions != NULL) {
-        UIGraphicsBeginImageContextWithOptions(size,NO,0.0);
-    } else {
+    NSMutableString *text = [[NSMutableString alloc] init];
+    [text appendString:evento.nome];
+    [text appendString:@" @ "];
+    [text appendString:evento.local];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"E, dd/MM/yyyy 'às' HH:mm"];
+    NSString *text2 = [formatter stringFromDate:evento.data];
+    
+    NSString *text3 = evento.atracoes;
+    
+    UIFont *font = [UIFont fontWithName:@"Futura" size:32.0f];
+    CGSize textSize = CGSizeMake(320.0f, 20000.0f);
+    NSDictionary *attrs = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [UIColor whiteColor], NSForegroundColorAttributeName, nil];
+    CGRect rect = [text boundingRectWithSize:textSize options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading) attributes:attrs context:nil];
+    
+    UIFont *font2 = [UIFont fontWithName:@"Futura" size:20.0f];
+    NSDictionary *attrs2 = [NSDictionary dictionaryWithObjectsAndKeys:font2, NSFontAttributeName, [UIColor grayColor], NSForegroundColorAttributeName, nil];
+    CGRect rect2 = [text2 boundingRectWithSize:textSize options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading) attributes:attrs2 context:nil];
+    
+    UIFont *font3 = [UIFont fontWithName:@"Futura" size:18.0f];
+    NSDictionary *attrs3 = [NSDictionary dictionaryWithObjectsAndKeys:font3, NSFontAttributeName, [UIColor whiteColor], NSForegroundColorAttributeName, nil];
+    CGRect rect3 = [text3 boundingRectWithSize:textSize options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading) attributes:attrs3 context:nil];
+    
+    CGSize size = CGSizeMake(rect.size.width, rect.size.height + rect2.size.height + rect3.size.height + HEIGHT_MARGIN * 2);
+    
+    if (UIGraphicsBeginImageContextWithOptions != NULL)
+        UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
+    else
         UIGraphicsBeginImageContext(size);
-    }
     
-    [nomeEvento drawInRect:CGRectMake(0,0,size.width,size.height) withAttributes:[NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [UIColor whiteColor], NSForegroundColorAttributeName, nil]];
+    [text drawInRect:rect withAttributes:attrs];
+    
+    CGRect text2Rect = CGRectMake(rect2.origin.x, rect.origin.y + rect.size.height + HEIGHT_MARGIN, rect2.size.width, rect2.size.height);
+    [text2 drawInRect:text2Rect withAttributes:attrs2];
+    
+    CGRect text3Rect = CGRectMake(rect3.origin.x, text2Rect.origin.y + text2Rect.size.height + HEIGHT_MARGIN, rect3.size.width, rect3.size.height);
+    [text3 drawInRect:text3Rect withAttributes:attrs3];
     
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
