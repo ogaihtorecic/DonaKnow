@@ -14,6 +14,8 @@
 
 @interface PhotoViewController ()
 
+- (UIImage*)placeholderImage;
+
 @end
 
 @implementation PhotoViewController
@@ -50,7 +52,7 @@
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     imageView.backgroundColor = [UIColor blackColor];
     
-    [imageView setImageWithURL:[NSURL URLWithString:evento.imagem] placeholderImage:[UIImage imageNamed:@"placeholder_70x70.png"]];
+    [imageView setImageWithURL:[NSURL URLWithString:evento.imagem] placeholderImage:[self placeholderImage]];
     [imageView setUserInteractionEnabled:TRUE];
     
     self.view = imageView;
@@ -76,6 +78,26 @@
 - (void)hidePhoto
 {
     [self dismissViewControllerAnimated:TRUE completion:nil];
+}
+
+- (UIImage*)placeholderImage {
+    NSString *nomeEvento = evento.nome;
+    UIFont *font = [UIFont systemFontOfSize:16.0f];
+    CGSize size  = [nomeEvento sizeWithFont:font];
+    
+    if (UIGraphicsBeginImageContextWithOptions != NULL) {
+        UIGraphicsBeginImageContextWithOptions(size,NO,0.0);
+    } else {
+        UIGraphicsBeginImageContext(size);
+    }
+    
+    [nomeEvento drawInRect:CGRectMake(0,0,size.width,size.height) withAttributes:[NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [UIColor whiteColor], NSForegroundColorAttributeName, nil]];
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
+    
 }
 
 - (void)didReceiveMemoryWarning
