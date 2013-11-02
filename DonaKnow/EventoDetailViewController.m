@@ -10,6 +10,7 @@
 #import "Evento.h"
 #import "PhotoViewController.h"
 #import "DetailTableCell.h"
+#import "Utilitary.h"
 
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <Social/Social.h>
@@ -89,8 +90,7 @@ UIImageView *imagemEvento;
         [self.header addSubview:nomeEventoLabel];
         
         CGSize headerTextSize = CGSizeMake(HEADER_TEXT_WIDTH, 20000.0f);
-        NSDictionary *attrs = [NSDictionary dictionaryWithObjectsAndKeys:nomeEventoFont, NSFontAttributeName, nil];
-        CGRect nomeEventoRect = [theEvento.nome boundingRectWithSize:headerTextSize options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading) attributes:attrs context:nil];
+        CGSize nomeEventoRect = [Utilitary boundingRectWithSize:headerTextSize font:nomeEventoFont text:theEvento.nome];
         
         UIFont *localEventoFont = [UIFont systemFontOfSize:FONT_SIZE];
         UILabel *localEventoLabel = [[UILabel alloc] initWithFrame:CGRectZero];
@@ -99,18 +99,17 @@ UIImageView *imagemEvento;
         [localEventoLabel setFont:localEventoFont];
         [self.header addSubview:localEventoLabel];
         
-        attrs = [NSDictionary dictionaryWithObjectsAndKeys:localEventoFont, NSFontAttributeName, nil];
-        CGRect localEventoRect = [theEvento.nome boundingRectWithSize:headerTextSize options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading) attributes:attrs context:nil];
+        CGSize localEventoRect = [Utilitary boundingRectWithSize:headerTextSize font:localEventoFont text:theEvento.nome];
         
-        float totalHeight = nomeEventoRect.size.height + localEventoRect.size.height;
+        float totalHeight = nomeEventoRect.height + localEventoRect.height;
         float nomeEventoY = HEADER_HEIGHT / 2 - totalHeight / 2;
-        float localEventoY = nomeEventoY + nomeEventoRect.size.height + HEADER_CONTENT_MARGIN;
+        float localEventoY = nomeEventoY + nomeEventoRect.height + HEADER_CONTENT_MARGIN;
         
         [nomeEventoLabel setText:theEvento.nome];
-        [nomeEventoLabel setFrame:CGRectMake(HEADER_TEXT_X, nomeEventoY, HEADER_TEXT_WIDTH, nomeEventoRect.size.height)];
+        [nomeEventoLabel setFrame:CGRectMake(HEADER_TEXT_X, nomeEventoY, HEADER_TEXT_WIDTH, nomeEventoRect.height)];
         
         [localEventoLabel setText:theEvento.local];
-        [localEventoLabel setFrame:CGRectMake(HEADER_TEXT_X, localEventoY, HEADER_TEXT_WIDTH, localEventoRect.size.height)];
+        [localEventoLabel setFrame:CGRectMake(HEADER_TEXT_X, localEventoY, HEADER_TEXT_WIDTH, localEventoRect.height)];
         
         
         keys = [[NSMutableArray alloc] init];
@@ -287,14 +286,13 @@ UIImageView *imagemEvento;
     CGSize constraint = CGSizeMake(CELL_CONTENT_WIDTH, 20000.0f);
     
     UIFont *font = [UIFont systemFontOfSize:FONT_SIZE];
-    NSDictionary *attrs = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, nil];
-    CGRect rect = [text boundingRectWithSize:constraint options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading) attributes:attrs context:nil];
+    CGSize rect = [Utilitary boundingRectWithSize:constraint font:font text:text];
     
     if (!label)
         label = (UILabel*)[cell viewWithTag:1];
     
     [label setText:text];
-    [label setFrame:CGRectMake(TEXT_X, TEXT_Y, CELL_CONTENT_WIDTH, MAX(rect.size.height, TEXT_MAX_HEIGHT))];
+    [label setFrame:CGRectMake(TEXT_X, TEXT_Y, CELL_CONTENT_WIDTH, MAX(rect.height, TEXT_MAX_HEIGHT))];
     
     return cell;
 }
@@ -305,10 +303,9 @@ UIImageView *imagemEvento;
     CGSize constraint = CGSizeMake(CELL_CONTENT_WIDTH, 20000.0f);
     
     UIFont *font = [UIFont systemFontOfSize:FONT_SIZE];
-    NSDictionary *attrs = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, nil];
-    CGRect rect = [text boundingRectWithSize:constraint options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading) attributes:attrs context:nil];
+    CGSize rect = [Utilitary boundingRectWithSize:constraint font:font text:text];
     
-    CGFloat height = MAX(rect.size.height, TEXT_MAX_HEIGHT);
+    CGFloat height = MAX(rect.height, TEXT_MAX_HEIGHT);
     
     return TEXT_Y + height + CONTENT_MARGIN;
 }

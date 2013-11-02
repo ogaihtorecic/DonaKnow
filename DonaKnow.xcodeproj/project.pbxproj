@@ -49,6 +49,7 @@
 		AFC6199A17FF78C6005708E4 /* Pin.png in Resources */ = {isa = PBXBuildFile; fileRef = AFC6199617FF78C6005708E4 /* Pin.png */; };
 		AFC6199B17FF78C6005708E4 /* Pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFC6199717FF78C6005708E4 /* Pin@2x.png */; };
 		AFCBE41F17EEB57A00FBC0C3 /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCBE41E17EEB57A00FBC0C3 /* PhotoViewController.m */; };
+		AFCF3B8F1825485500261C56 /* Utilitary.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCF3B8E1825485500261C56 /* Utilitary.m */; };
 		AFE2CB3917E8080A00F229B2 /* EventosDiaDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE2CB3817E8080A00F229B2 /* EventosDiaDataController.m */; };
 		AFE2CB3C17E80AFC00F229B2 /* EventosDiaMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE2CB3B17E80AFC00F229B2 /* EventosDiaMasterViewController.m */; };
 		AFE2CB3F17E80DD300F229B2 /* EventosDestaquesDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE2CB3E17E80DD300F229B2 /* EventosDestaquesDataController.m */; };
@@ -138,6 +139,8 @@
 		AFC6199717FF78C6005708E4 /* Pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pin@2x.png"; sourceTree = "<group>"; };
 		AFCBE41D17EEB57A00FBC0C3 /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
 		AFCBE41E17EEB57A00FBC0C3 /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
+		AFCF3B8D1825485500261C56 /* Utilitary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilitary.h; sourceTree = "<group>"; };
+		AFCF3B8E1825485500261C56 /* Utilitary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilitary.m; sourceTree = "<group>"; };
 		AFE2CB3717E8080A00F229B2 /* EventosDiaDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventosDiaDataController.h; sourceTree = "<group>"; };
 		AFE2CB3817E8080A00F229B2 /* EventosDiaDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventosDiaDataController.m; sourceTree = "<group>"; };
 		AFE2CB3A17E80AFC00F229B2 /* EventosDiaMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventosDiaMasterViewController.h; sourceTree = "<group>"; };
@@ -316,6 +319,8 @@
 				AFA0739917EA878700EB7728 /* MBProgressHUD.m */,
 				AF6F41A517FF44D100696B05 /* Reachability.h */,
 				AF6F41A617FF44D100696B05 /* Reachability.m */,
+				AFCF3B8D1825485500261C56 /* Utilitary.h */,
+				AFCF3B8E1825485500261C56 /* Utilitary.m */,
 				AFF879B817E138CC001C0BE7 /* DonaKnow-Info.plist */,
 				AFF879B917E138CC001C0BE7 /* InfoPlist.strings */,
 				AFF879BC17E138CC001C0BE7 /* main.m */,
@@ -544,6 +549,7 @@
 				AFE2CB4717E812DD00F229B2 /* EventosGratisDataController.m in Sources */,
 				AFE2CB4A17E8136700F229B2 /* EventosGratisMasterViewController.m in Sources */,
 				AFA0739A17EA878700EB7728 /* MBProgressHUD.m in Sources */,
+				AFCF3B8F1825485500261C56 /* Utilitary.m in Sources */,
 				AFCBE41F17EEB57A00FBC0C3 /* PhotoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

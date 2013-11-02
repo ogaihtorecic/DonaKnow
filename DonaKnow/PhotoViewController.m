@@ -8,11 +8,14 @@
 
 #import "PhotoViewController.h"
 #import "Evento.h"
+#import "Utilitary.h"
 
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <QuartzCore/QuartzCore.h>
 
 #define HEIGHT_MARGIN   7.0f
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
 
 @interface PhotoViewController ()
 
@@ -38,10 +41,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    [self setNeedsStatusBarAppearanceUpdate];
-    self.modalPresentationCapturesStatusBarAppearance = YES;
-    
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+        [self setNeedsStatusBarAppearanceUpdate];
+        self.modalPresentationCapturesStatusBarAppearance = YES;
+    }
 }
 
 -(BOOL)prefersStatusBarHidden {
@@ -64,9 +67,11 @@
     [closeButton setTitle:@"FECHAR" forState:UIControlStateNormal];
     closeButton.titleLabel.font = [UIFont boldSystemFontOfSize:12.0];
     
-    [closeButton.layer setBackgroundColor:[UIColor colorWithWhite:0.0 alpha:0.5].CGColor];
-    [closeButton.layer setCornerRadius:4.0f];
-    [closeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+        [closeButton.layer setBackgroundColor:[UIColor colorWithWhite:0.0 alpha:0.5].CGColor];
+        [closeButton.layer setCornerRadius:4.0f];
+        [closeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    }
     
     float buttonWidth = 70.0;
     float buttonHeight = 30.0;
@@ -98,30 +103,31 @@
     UIFont *font = [UIFont fontWithName:@"Futura" size:32.0f];
     CGSize textSize = CGSizeMake(320.0f, 20000.0f);
     NSDictionary *attrs = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [UIColor whiteColor], NSForegroundColorAttributeName, nil];
-    CGRect rect = [text boundingRectWithSize:textSize options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading) attributes:attrs context:nil];
+    CGSize rect = [Utilitary boundingRectWithSize:textSize font:font text:text];
     
     UIFont *font2 = [UIFont fontWithName:@"Futura" size:20.0f];
     NSDictionary *attrs2 = [NSDictionary dictionaryWithObjectsAndKeys:font2, NSFontAttributeName, [UIColor grayColor], NSForegroundColorAttributeName, nil];
-    CGRect rect2 = [text2 boundingRectWithSize:textSize options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading) attributes:attrs2 context:nil];
+    CGSize rect2 = [Utilitary boundingRectWithSize:textSize font:font2 text:text2];
     
     UIFont *font3 = [UIFont fontWithName:@"Futura" size:18.0f];
     NSDictionary *attrs3 = [NSDictionary dictionaryWithObjectsAndKeys:font3, NSFontAttributeName, [UIColor whiteColor], NSForegroundColorAttributeName, nil];
-    CGRect rect3 = [text3 boundingRectWithSize:textSize options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading) attributes:attrs3 context:nil];
+    CGSize rect3 = [Utilitary boundingRectWithSize:textSize font:font3 text:text3];
     
-    CGSize size = CGSizeMake(rect.size.width, rect.size.height + rect2.size.height + rect3.size.height + HEIGHT_MARGIN * 2);
+    CGSize size = CGSizeMake(rect.width, rect.height + rect2.height + rect3.height + HEIGHT_MARGIN * 2);
     
     if (UIGraphicsBeginImageContextWithOptions != NULL)
         UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
     else
         UIGraphicsBeginImageContext(size);
+
+    CGRect rect_ = CGRectMake(0.0f, 0.0f, rect.width, rect.height);
+    [Utilitary drawInRect:rect_ withAttributes:attrs text:text];
     
-    [text drawInRect:rect withAttributes:attrs];
+    CGRect text2Rect = CGRectMake(0.0f, rect_.origin.y + rect.height + HEIGHT_MARGIN, rect2.width, rect2.height);
+    [Utilitary drawInRect:text2Rect withAttributes:attrs2 text:text2];
     
-    CGRect text2Rect = CGRectMake(rect2.origin.x, rect.origin.y + rect.size.height + HEIGHT_MARGIN, rect2.size.width, rect2.size.height);
-    [text2 drawInRect:text2Rect withAttributes:attrs2];
-    
-    CGRect text3Rect = CGRectMake(rect3.origin.x, text2Rect.origin.y + text2Rect.size.height + HEIGHT_MARGIN, rect3.size.width, rect3.size.height);
-    [text3 drawInRect:text3Rect withAttributes:attrs3];
+    CGRect text3Rect = CGRectMake(0.0f, text2Rect.origin.y + text2Rect.size.height + HEIGHT_MARGIN, rect3.width, rect3.height);
+    [Utilitary drawInRect:text3Rect withAttributes:attrs3 text:text3];
     
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();

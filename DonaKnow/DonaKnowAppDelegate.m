@@ -8,20 +8,23 @@
 
 #import "DonaKnowAppDelegate.h"
 
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+
 @implementation DonaKnowAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
-    UITabBar *tabBar = tabBarController.tabBar;
-    UITabBarItem *eventosDia = [tabBar.items objectAtIndex:0];
-    UITabBarItem *destaques = [tabBar.items objectAtIndex:1];
-    UITabBarItem *gratis = [tabBar.items objectAtIndex:2];
-    
-    
-    eventosDia.selectedImage    = [UIImage imageNamed:@"EventosDia_selected.png"];
-    destaques.selectedImage     = [UIImage imageNamed:@"Destaques_selected.png"];
-    gratis.selectedImage        = [UIImage imageNamed:@"Gratis_selected.png"];
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+        UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+        UITabBar *tabBar = tabBarController.tabBar;
+        UITabBarItem *eventosDia = [tabBar.items objectAtIndex:0];
+        UITabBarItem *destaques = [tabBar.items objectAtIndex:1];
+        UITabBarItem *gratis = [tabBar.items objectAtIndex:2];
+        
+        eventosDia.selectedImage    = [UIImage imageNamed:@"EventosDia_selected.png"];
+        destaques.selectedImage     = [UIImage imageNamed:@"Destaques_selected.png"];
+        gratis.selectedImage        = [UIImage imageNamed:@"Gratis_selected.png"];
+    }
 
     return YES;
 }
