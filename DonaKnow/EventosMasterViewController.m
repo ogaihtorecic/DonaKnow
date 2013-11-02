@@ -13,6 +13,7 @@
 #import "Evento.h"
 #import "MBProgressHUD.h"
 #import "Reachability.h"
+#import "Utilitary.h"
 
 #import <SDWebImage/UIImageView+WebCache.h>
 

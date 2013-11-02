@@ -26,6 +26,8 @@
 #define HEADER_HEIGHT       100.0f
 #define CONTENT_MARGIN      7.0f
 #define HEADER_CONTENT_MARGIN      5.0f
+#define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
 @interface EventoDetailViewController ()
 
@@ -59,9 +61,23 @@ UIImageView *imagemEvento;
 
 - (void)configureView
 {
-    // Update the user interface for the detail item.
+    if (SYSTEM_VERSION_LESS_THAN(@"7.0")) {
+        CGRect headerBounds = self.header.frame;
+        [self.header setFrame:CGRectMake(headerBounds.origin.x, 0.0f, headerBounds.size.width, headerBounds.size.height)];
+        
+        CGRect buttonBounds = self.imageReferenceButton.frame;
+        [self.imageReferenceButton setFrame:CGRectMake(buttonBounds.origin.x, 15.0f, buttonBounds.size.width, buttonBounds.size.height)];
+        
+        CGRect tableViewBounds = self.tableView.frame;
+        [self.tableView setFrame:CGRectMake(tableViewBounds.origin.x, 100.0f, tableViewBounds.size.width, 355.0f)];
+    }
+    
+    [self.imageReferenceButton setTitleColor:[UIColor clearColor] forState:UIControlStateNormal];
+    [self.imageReferenceButton setTitleShadowColor:[UIColor clearColor] forState:UIControlStateNormal];
+    [self.imageReferenceButton setTitleColor:[UIColor clearColor] forState:UIControlStateHighlighted];
+    [self.imageReferenceButton setTitleShadowColor:[UIColor clearColor] forState:UIControlStateHighlighted];
+    
     Evento *theEvento = self.evento;
-    //self.edgesForExtendedLayout = UIRectEdgeNone;
     if (theEvento) {
         imagemEvento = [[UIImageView alloc] initWithFrame:self.imageReferenceButton.frame];
         [imagemEvento setImageWithURL:[NSURL URLWithString:theEvento.imagem] placeholderImage:[UIImage imageNamed:@"placeholder_70x70.png"]];
@@ -272,8 +288,10 @@ UIImageView *imagemEvento;
         [cell.actionButton addTarget:self action:@selector(tapPhone:) forControlEvents:UIControlEventTouchUpInside];
         
     } else if([cell.titleLabel.text isEqualToString:@"Data"]) {
-        [cell.actionButton setImage:[UIImage imageNamed:@"Calendar.png"] forState:UIControlStateNormal];
-        [cell.actionButton addTarget:self action:@selector(tapCalendar:) forControlEvents:UIControlEventTouchUpInside];
+        if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+            [cell.actionButton setImage:[UIImage imageNamed:@"Calendar.png"] forState:UIControlStateNormal];
+            [cell.actionButton addTarget:self action:@selector(tapCalendar:) forControlEvents:UIControlEventTouchUpInside];
+        }
         
     } else if([cell.titleLabel.text isEqualToString:@"Atrações"]) {
         [cell.actionButton setImage:[UIImage imageNamed:@"Web.png"] forState:UIControlStateNormal];

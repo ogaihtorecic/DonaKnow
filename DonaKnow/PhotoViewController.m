@@ -44,6 +44,8 @@
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
         [self setNeedsStatusBarAppearanceUpdate];
         self.modalPresentationCapturesStatusBarAppearance = YES;
+    } else {
+        [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
     }
 }
 

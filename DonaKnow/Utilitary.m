@@ -35,4 +35,10 @@
     }
 }
 
++ (void)showStatusBar {
+    if (SYSTEM_VERSION_LESS_THAN(@"7.0")) {
+        [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
+    }
+}
+
 @end

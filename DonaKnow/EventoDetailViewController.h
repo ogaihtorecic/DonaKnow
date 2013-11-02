@@ -18,5 +18,6 @@
 @property (strong, nonatomic) Evento *evento;
 @property (weak, nonatomic) IBOutlet UIView *header;
 @property (weak, nonatomic) IBOutlet UIButton *imageReferenceButton;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
