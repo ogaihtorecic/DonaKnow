@@ -39,7 +39,6 @@
 		AF5859291811E4C9003DEEA4 /* icone_dona_logos_IPhone_114X114.png in Resources */ = {isa = PBXBuildFile; fileRef = AF5859191811E4C9003DEEA4 /* icone_dona_logos_IPhone_114X114.png */; };
 		AF6F41A717FF44D100696B05 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AF6F41A617FF44D100696B05 /* Reachability.m */; };
 		AF6F41A917FF485800696B05 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF6F41A817FF485800696B05 /* SystemConfiguration.framework */; };
-		AFA0739A17EA878700EB7728 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AFA0739917EA878700EB7728 /* MBProgressHUD.m */; };
 		AFC6197917FF6243005708E4 /* DetailTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AFC6197817FF6243005708E4 /* DetailTableCell.m */; };
 		AFC6197B17FF6349005708E4 /* DetailTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFC6197A17FF6349005708E4 /* DetailTableCell.xib */; };
 		AFC6199217FF77D3005708E4 /* Phone.png in Resources */ = {isa = PBXBuildFile; fileRef = AFC6199017FF77D3005708E4 /* Phone.png */; };
@@ -126,8 +125,6 @@
 		AF6F41A517FF44D100696B05 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		AF6F41A617FF44D100696B05 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		AF6F41A817FF485800696B05 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		AFA0739817EA878700EB7728 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		AFA0739917EA878700EB7728 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		AFC6197717FF6243005708E4 /* DetailTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTableCell.h; sourceTree = "<group>"; };
 		AFC6197817FF6243005708E4 /* DetailTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTableCell.m; sourceTree = "<group>"; };
 		AFC6197A17FF6349005708E4 /* DetailTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailTableCell.xib; sourceTree = "<group>"; };
@@ -315,8 +312,6 @@
 		AFF879B717E138CC001C0BE7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				AFA0739817EA878700EB7728 /* MBProgressHUD.h */,
-				AFA0739917EA878700EB7728 /* MBProgressHUD.m */,
 				AF6F41A517FF44D100696B05 /* Reachability.h */,
 				AF6F41A617FF44D100696B05 /* Reachability.m */,
 				AFCF3B8D1825485500261C56 /* Utilitary.h */,
@@ -548,7 +543,6 @@
 				AFE2CB4217E8108900F229B2 /* EventosDestaquesMasterViewController.m in Sources */,
 				AFE2CB4717E812DD00F229B2 /* EventosGratisDataController.m in Sources */,
 				AFE2CB4A17E8136700F229B2 /* EventosGratisMasterViewController.m in Sources */,
-				AFA0739A17EA878700EB7728 /* MBProgressHUD.m in Sources */,
 				AFCF3B8F1825485500261C56 /* Utilitary.m in Sources */,
 				AFCBE41F17EEB57A00FBC0C3 /* PhotoViewController.m in Sources */,
 			);

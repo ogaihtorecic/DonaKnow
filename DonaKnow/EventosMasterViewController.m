@@ -11,7 +11,6 @@
 #import "EventoDetailViewController.h"
 #import "EventoDataController.h"
 #import "Evento.h"
-#import "MBProgressHUD.h"
 #import "Reachability.h"
 #import "Utilitary.h"
 
@@ -27,8 +26,9 @@
 
 @implementation EventosMasterViewController
 
-BOOL loadDataRunning = false;
 UIAlertView *noInternetAlert;
+UIActivityIndicatorView *activityIndicator;
+
 
 - (void)viewDidLoad
 {
@@ -41,10 +41,8 @@ UIAlertView *noInternetAlert;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:kReachabilityChangedNotification object:nil];
     
     noInternetAlert = [[UIAlertView alloc] initWithTitle:@"Sem Internet!" message:@"Verifique sua conexão e tente novamente" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-}
-
--(BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
-    return !loadDataRunning;
+    
+    activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
 }
 
 - (void) loadDataWithMessage:(id)showMessage {
@@ -84,16 +82,17 @@ UIAlertView *noInternetAlert;
 
 - (void)showWaitMessage {
     self.navigationItem.rightBarButtonItem.enabled = FALSE;
-    [self.tableView setUserInteractionEnabled:FALSE];
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    loadDataRunning = true;
+    self.navigationItem.rightBarButtonItem.customView = activityIndicator;
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    [activityIndicator startAnimating];
+    
 }
 
 - (void)dismissWaitMessage {
     self.navigationItem.rightBarButtonItem.enabled = TRUE;
-    [self.tableView setUserInteractionEnabled:TRUE];
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
-    loadDataRunning = false;
+    self.navigationItem.rightBarButtonItem.customView = Nil;
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+    [activityIndicator stopAnimating];
 }
 
 - (void)showErrorMessage {

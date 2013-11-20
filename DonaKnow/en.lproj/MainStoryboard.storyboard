@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
     <dependencies>
         <deployment version="1552" defaultVersion="1552" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
@@ -62,6 +62,7 @@
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="Eventos do Dia" id="t6x-bU-NlS">
+                        <barButtonItem key="backBarButtonItem" title="Voltar" id="hfe-cT-8ra"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="I3y-A6-VBZ"/>
                     </navigationItem>
                 </tableViewController>
@@ -105,7 +106,9 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Destaques" id="dey-bH-KpW"/>
+                    <navigationItem key="navigationItem" title="Destaques" id="dey-bH-KpW">
+                        <barButtonItem key="backBarButtonItem" title="Voltar" id="3nf-0X-Wml"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TBW-N9-xhD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -208,7 +211,9 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Grátis" id="hLY-is-qC1"/>
+                    <navigationItem key="navigationItem" title="Grátis" id="hLY-is-qC1">
+                        <barButtonItem key="backBarButtonItem" title="Voltar" id="GXM-mS-8YD"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kYt-oP-AtF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -258,6 +263,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="eYb-fk-JfZ"/>
+        <segue reference="8wh-9u-x4d"/>
     </inferredMetricsTieBreakers>
 </document>
