@@ -8,6 +8,7 @@
 
 #import "EventosGratisMasterViewController.h"
 #import "EventosGratisDataController.h"
+#import "Utilitary.h"
 
 @interface EventosGratisMasterViewController ()
 
@@ -24,6 +25,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    if(Utilitary.gratisList != NULL) {
+        self.dataController.masterEventoList = Utilitary.gratisList;
+        [self.tableView reloadData];
+        Utilitary.gratisList = NULL;
+    }
 }
 
 - (void)didReceiveMemoryWarning

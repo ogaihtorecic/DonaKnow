@@ -13,4 +13,11 @@
 + (CGSize)boundingRectWithSize:(CGSize)size font:(UIFont*)font text:(NSString*)text;
 + (void)drawInRect:(CGRect)rect withAttributes:(NSDictionary*)attributes text:(NSString*)text;
 + (void)showStatusBar;
+
++ (NSMutableArray*)destaquesList;
++ (void)setDestaquesList:(NSMutableArray*)list;
+
++ (NSMutableArray*)gratisList;
++ (void)setGratisList:(NSMutableArray*)list;
+
 @end

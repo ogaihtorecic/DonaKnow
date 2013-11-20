@@ -14,7 +14,6 @@
 
 @property (strong, nonatomic) EventoDataController *dataController;
 
-- (void) loadDataWithMessage:(id)showMessage;
-- (void) refreshButtonLoadData;
+- (void) loadData;
 
 @end

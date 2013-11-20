@@ -13,14 +13,13 @@
 #import "Evento.h"
 #import "Reachability.h"
 #import "Utilitary.h"
+#import "EventosDestaquesDataController.h"
+#import "EventosGratisDataController.h"
 
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface EventosMasterViewController ()
 
-- (void) loadDataOperationWithMessage:(id)showMessage;
-- (void) showWaitMessage;
-- (void) dismissWaitMessage;
 
 @end
 
@@ -29,12 +28,14 @@
 UIAlertView *noInternetAlert;
 UIActivityIndicatorView *activityIndicator;
 
+EventoDataController *destaquesController;
+EventoDataController *gratisController;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.navigationItem.rightBarButtonItem.target = self;
-    self.navigationItem.rightBarButtonItem.action = @selector(refreshButtonLoadData);
+    self.navigationItem.rightBarButtonItem.action = @selector(loadData);
     
     self.tabBarController.delegate = self;
     
@@ -43,23 +44,20 @@ UIActivityIndicatorView *activityIndicator;
     noInternetAlert = [[UIAlertView alloc] initWithTitle:@"Sem Internet!" message:@"Verifique sua conexão e tente novamente" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     
     activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    
+    destaquesController = [[EventosDestaquesDataController alloc] init];
+    gratisController = [[EventosGratisDataController alloc] init];
 }
 
-- (void) loadDataWithMessage:(id)showMessage {
+- (void) loadData {
     NSOperationQueue *queue = [NSOperationQueue new];
-    NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(loadDataOperationWithMessage:) object:showMessage];
+    NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(loadDataOperation) object:nil];
     
     [queue addOperation:operation];
     
 }
 
-- (void) refreshButtonLoadData {
-    [self loadDataWithMessage:[NSNumber numberWithBool:YES]];
-    [[[[self.tabBarController.viewControllers objectAtIndex:1] viewControllers] objectAtIndex:0] loadDataWithMessage:[NSNumber numberWithBool:NO]];
-    [[[[self.tabBarController.viewControllers objectAtIndex:2] viewControllers] objectAtIndex:0] loadDataWithMessage:[NSNumber numberWithBool:NO]];
-}
-
-- (void) loadDataOperationWithMessage:(id)showMessage {
+- (void) loadDataOperation {
     [self performSelectorOnMainThread:@selector(showWaitMessage) withObject:nil waitUntilDone:YES];
     
     if(self.isThereConnection) {
@@ -68,15 +66,18 @@ UIActivityIndicatorView *activityIndicator;
         NSData *jsonData = [NSData dataWithContentsOfURL: [NSURL URLWithString:url]];
         [self.dataController reloadWithData:jsonData];
         
+        [destaquesController reloadWithData:jsonData];
+        [gratisController reloadWithData:jsonData];
+        
+        Utilitary.destaquesList = destaquesController.masterEventoList;
+        Utilitary.gratisList = gratisController.masterEventoList;
+        
         [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
         [self performSelectorOnMainThread:@selector(dismissWaitMessage) withObject:nil waitUntilDone:YES];
         
     } else {
         [self performSelectorOnMainThread:@selector(dismissWaitMessage) withObject:nil waitUntilDone:YES];
-        
-        if ([showMessage boolValue]) {
-            [self performSelectorOnMainThread:@selector(showErrorMessage) withObject:nil waitUntilDone:YES];
-        }
+        [self performSelectorOnMainThread:@selector(showErrorMessage) withObject:nil waitUntilDone:YES];
     }
 }
 

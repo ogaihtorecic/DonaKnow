@@ -41,4 +41,28 @@
     }
 }
 
+static NSMutableArray *destaquesList;
+
++(NSMutableArray*)destaquesList
+{
+    return destaquesList;
+}
+
++(void)setDestaquesList:(NSMutableArray*)list
+{
+    destaquesList = list;
+}
+
+static NSMutableArray *gratisList;
+
++(NSMutableArray*)gratisList
+{
+    return gratisList;
+}
+
++(void)setGratisList:(NSMutableArray*)list
+{
+    gratisList = list;
+}
+
 @end
